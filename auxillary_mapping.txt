@@ -1,0 +1,8 @@
+word,root,tam
+rahA,raha,yA
+rahegA,raha,gA
+huA,ho,yA
+hogA,ho,gA
+padZA,padZa,yA
+padZegA,padZa,gA
+hE,hE,hE

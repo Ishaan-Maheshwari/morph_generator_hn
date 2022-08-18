@@ -1,0 +1,9 @@
+Alternative Approach for Morph Generator
+----------------------------------------
+
+1. Preprocess each rule row (like a row vector)
+2. Zip all rows to make list of concept_words with thier info (like a column vector)
+3. Process each word(column) one by one by checking whether it is a noun, verb, adjective and process accordingly.
+4. Merge processed words + sort in the order of index
+5. Morph generator 
+6. Output

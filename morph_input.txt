@@ -1,0 +1,1 @@
+^mEM<cat:p><case:d><gen:f><num:s>$ ^pahalA<cat:adj><case:d><gen:f><num:s>$ ^kiwAba<cat:n><case:d><gen:f><num:s>$ ^paDayA<cat:v><tam:yA><gen:f><num:s>$
