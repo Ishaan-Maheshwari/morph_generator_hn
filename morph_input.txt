@@ -1,1 +1,1 @@
-^mEM<cat:p><case:d><gen:f><num:s>$ ^pahalA<cat:adj><case:d><gen:f><num:s>$ ^kiwAba<cat:n><case:d><gen:f><num:s>$ ^paDayA<cat:v><tam:yA><gen:f><num:s>$
+^mEM<cat:p><case:d><gen:m><num:s>$ ^Sahara meM<cat:n><case:o><gen:m><num:s>$ ^vixyAlaya<cat:n><case:d><gen:m><num:s>$ ^jAyA<cat:v><tam:yA><gen:m><num:s>$

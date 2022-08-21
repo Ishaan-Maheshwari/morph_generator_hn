@@ -7,9 +7,11 @@ Write the output data into a file.
 """
 
 
+from logging import root
 import sys
 import re
 import subprocess
+from xmlrpc.client import FastMarshaller
 
 
 from wxconv import WXC
@@ -182,7 +184,35 @@ def process_verbs(verblist, case_infos, noun_info_list):
 #                 verb_word.append(char)
 #         verb_word = [verb_word[0]+verb_word[1]] + verb_word[2:]
 #     return " ".join(verb_word)
+def getNextNounId(fromIndex, gnp_value, case_info, index_data):
+    index = fromIndex
+    for i in range(len(index_data)) :
+        if gnp_value[index] != '' and index != fromIndex:
+            return index
+        else:
+            case = case_info[index]
+            if ':' not in case :
+                return -1
+            nextIndex = case.split(':')[0]
+            if nextIndex == '0':
+                return -1
+            else:
+                index = int(index_data.index(nextIndex))
+    return -1 #return False coinciding with index 0
 
+def checkPostPosition(index, case_info, IS_ANIM, TAM_YA):
+    if ':' not in case_info[index]:
+        return False
+    case = case_info[index].split(':')[1]
+    if case in ['k3', 'k4', 'k5', 'k7p', 'k7t' ,'k7', 'r6'] :
+        return True
+    elif case == 'k1' and IS_ANIM :
+        return True
+    elif case == 'k2' and TAM_YA :
+        return True
+    else:
+        False
+    return False
 
 def handle_noun(root_words, gnp_value, case_info, seman_data, index_data, respect_data, indeclinable_words_info):
     """Look the data from the root words and gnp values to get noun info"""
@@ -203,14 +233,47 @@ def handle_noun(root_words, gnp_value, case_info, seman_data, index_data, respec
             number = 's' if data[1].lower(
             ) == 'sg' else 'p' if data[1].lower() == 'pl' else 's'
             category = 'n'
+            case = 'o'
             if "k1" in case_info[word]:
                 case = "d"
-            elif "k2" in case_info[word] and 'anim' in seman_data[word]:
+            elif "k2" in case_info[word] :
+                if 'anim' in seman_data[word]:
+                    root_word = root_word + ' ko'  #added for vibhakti
+                else:
+                    case = 'd'
+            elif "k3" in case_info[word] :
+                root_word = root_word + ' se'
+            elif "k4" in case_info[word] :
+                root_word = root_word + ' ko'
+            elif "k5" in case_info[word] :
+                root_word = root_word + ' se'
+            elif "r6" in case_info[word] :
                 case = 'o'
-            elif "k2" in case_info[word] and 'anim' not in seman_data[word]:
-                case = 'd'
+                nextNounIndex = getNextNounId(word, gnp_value, case_info, index_data)
+                if nextNounIndex != -1 :
+                    gnp_nextNoun = gnp_value[nextNounIndex].strip('][').split(' ')
+                    if gnp_nextNoun[0] == 'f':
+                        root_word = root_word + ' kI'
+                    else :
+                        is_anim = True if ('anim' in seman_data[nextNounIndex]) else False
+                        if checkPostPosition(nextNounIndex, case_info, IS_ANIM = is_anim, TAM_YA = False):
+                            root_word = root_word + ' ke'
+                        elif gnp_nextNoun[1] == 'pl':
+                            root_word = root_word + ' ke'
+                        else:
+                            root_word = root_word + ' kA'
+            elif "k7p" in case_info[word] :
+                root_word = root_word + ' meM'
+            elif "k7t" in case_info[word] :
+                root_word = root_word + ' ko'
+            elif "k7" in case_info[word] :
+                root_word = root_word + ' meM'
+            elif "mk1" in case_info[word] :
+                root_word = root_word + ' se'
+            elif "jk1" in case_info[word] :
+                root_word = root_word + ' ko'
             else:
-                case = 'o'
+                pass
             if root_word == 'addressee':
                 addr_map = {'respect':'Apa', 'informal':'wU'}
                 root_word = addr_map.get(respect_data[word], 'wuma')
@@ -303,7 +366,6 @@ def analyze_output_data(output_data, morph_input, adj_infos):
 
     output_data = output_data.split(" ")
     combine_data = list(zip(output_data, morph_input))
-    # print("Before Morph Input:",morph_input)
     adj_name_info = []
     if len(adj_infos) >= 1:
         for name in adj_infos:
@@ -314,7 +376,6 @@ def analyze_output_data(output_data, morph_input, adj_infos):
                 new_data = data[1][:4] + \
                     tuple(data[1][4].replace('m', 'f'))+data[1][5:]
                 morph_input[morph_input.index(data[1])] = new_data
-    # print("After Morph Input:", morph_input)
     return morph_input
 
 
@@ -351,11 +412,9 @@ if __name__ == "__main__":
         indeclinable_words_info
     )
     verbs = preprocess_verbs(root_words_info,index_info)
-    #VERB_INFO = process_verb_words(root_info[-1])
     noun_info_list, adj_data_list, ind_list = handle_noun(
         root_info[0:-1], gnp_info, case_infos, semantic_info, index_info, respect_data, indeclinable_words_info)
     VERB_INFO = process_verbs(verbs, case_infos, noun_info_list)
-    # print(noun_info_list)
     adj_info_data = handle_adjective(adj_data_list, noun_info_list)
     generate_input_data = analyze_data(noun_info_list, adj_info_data, VERB_INFO, ind_list)
     morph_input_info = generate_input_for_morph_generator(generate_input_data)
@@ -369,8 +428,6 @@ if __name__ == "__main__":
     WRITE_POST_OUTPUT = write_data(generate_post_process_input)
     POST_PROCESS_OUTPUT = run_morph_generator(WRITE_POST_OUTPUT)
     read_post_output = read_output_data(POST_PROCESS_OUTPUT)
-    # read_post_output = read_output_data(OUTPUT_DATA)
     hindi_text_info = collect_hindi_output(read_post_output)
     WRITE_HINDI_OUTPUT = write_hindi_text(hindi_text_info, POST_PROCESS_OUTPUT)
-    # WRITE_HINDI_OUTPUT = write_hindi_text(hindi_text_info, OUTPUT_DATA)
     print(WRITE_HINDI_OUTPUT)

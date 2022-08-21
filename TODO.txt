@@ -1,3 +1,7 @@
+[ remaining vibhakti : k2p, rt ]
+
+
+
 Alternative Approach for Morph Generator
 ----------------------------------------
 
