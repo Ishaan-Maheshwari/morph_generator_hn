@@ -1,1 +1,1 @@
-^kyA/kyA<cat:p><case:d><parsarg:0><gen:m><per:a><num:s>/kyA<cat:p><case:d><parsarg:0><gen:m><per:a><num:p>/kyA<cat:p><case:d><parsarg:0><gen:f><per:a><num:s>/kyA<cat:p><case:d><parsarg:0><gen:f><per:a><num:p>/kyA<cat:p><case:o><parsarg:0><gen:m><per:a><num:s>/kyA<cat:p><case:o><parsarg:0><gen:m><per:a><num:p>/kyA<cat:p><case:o><parsarg:0><gen:f><per:a><num:s>/kyA<cat:p><case:o><parsarg:0><gen:f><per:a><num:p>$
+mEM<cat:p><case:o><parsarg:ne><gen:m><num:s><per:u> acCI kiwAba paDI

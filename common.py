@@ -374,7 +374,7 @@ def run_morph_generator(input_file):
     return "morph_input.txt-out.txt"
 
 
-def generate_morph():
+def generate_morph(processed_words):
     '''Run Morph generator'''
     morph_input = generate_input_for_morph_generator(processed_words)
     MORPH_INPUT_FILE = write_data(morph_input)
@@ -391,13 +391,28 @@ def read_output_data(output_file):
 def analyse_output_data(output_data, morph_input):
     output_data = output_data.strip().split(" ")
     combine_data = []
-    # combine_data = list(zip(output_data, morph_input))
+    print(output_data, morph_input)
     for i in range(len(output_data)):
         morph_input_list = list(morph_input[i])
         morph_input_list[1] = output_data[i]
-        # morph_input[i] = tuple(morph_input_list)
         combine_data.append(tuple(morph_input_list))
     return combine_data
+
+def handle_unprocessed(outputData, processed_nouns):
+    '''swapping gender info that do not exists in dictionary.'''
+    output_data = outputData.strip().split(" ")
+    has_changes = False
+    dataIndex = 0   #temporary [to know index value of generated word from sentence]
+    for data in output_data:
+        dataIndex = dataIndex + 1
+        if data[0] == '#':
+            for i in range(len(processed_nouns)):
+                if processed_nouns[i][0] == dataIndex:
+                    has_changes = True
+                    temp = list(processed_nouns[i])
+                    temp[4] = 'f' if processed_nouns[i][4] == 'm' else 'm'
+                    processed_nouns[i] = tuple(temp)
+    return has_changes,processed_nouns
 
 def join_indeclinables(transformed_data, processed_indeclinables, processed_others):
     '''Joins Indeclinable data with transformed data and sort it by index number.'''
@@ -443,7 +458,6 @@ def rearrange_sentence(fulldata):
     '''Function comments'''
     finalData = sorted(fulldata)
     final_words = [x[1].strip() for x in finalData]
-    print(final_words)
     return " ".join(final_words)
 
 def collect_hindi_output(source_text):

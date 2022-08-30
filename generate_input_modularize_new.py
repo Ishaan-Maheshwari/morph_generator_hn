@@ -33,21 +33,30 @@ if __name__ == "__main__":
     processed_indeclinables = process_indeclinables(indeclinables_data)
     processed_pronouns = process_pronouns(pronouns_data)
     processed_nouns = process_nouns(nouns_data)
+    # print(processed_nouns)
+    # sys.exit()
     processed_adjectives = process_adjectives(adjectives_data, processed_nouns)
     processed_verbs, processed_auxverbs = process_verbs(verbs_data, depend_data, processed_nouns, processed_pronouns)
     processed_pronouns = process_postposition(processed_pronouns, words_info, processed_verbs)
     processed_others = process_others(others_data)
     processed_words = collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs)
-    morph_input = generate_input_for_morph_generator(processed_words)
-    MORPH_INPUT_FILE = write_data(morph_input)
-    OUTPUT_FILE = run_morph_generator(MORPH_INPUT_FILE)
+    OUTPUT_FILE = generate_morph(processed_words)
+
+    #Pre-processing 2
+    outputData = read_output_data(OUTPUT_FILE)
+    has_changes,processed_nouns = handle_unprocessed(outputData, processed_nouns)
+    if has_changes:
+        #Reprocess adjectives and verbs based on new noun Info
+        processed_adjectives = process_adjectives(adjectives_data, processed_nouns)
+        processed_verbs, processed_auxverbs = process_verbs(verbs_data, depend_data, processed_nouns, processed_pronouns)
+        processed_words = collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs)
+        OUTPUT_FILE = generate_morph(processed_words)
     
     #Post-Processing
     outputData = read_output_data(OUTPUT_FILE)
     transformed_data = analyse_output_data(outputData, processed_words)
     transformed_fulldata = join_indeclinables(transformed_data, processed_indeclinables, processed_others)
     PP_fulldata = process_postposition(transformed_fulldata, words_info, processed_verbs)
-    # print(PP_fulldata)
     POST_PROCESS_OUTPUT = rearrange_sentence(PP_fulldata)
     hindi_output = collect_hindi_output(POST_PROCESS_OUTPUT)
     write_hindi_text(hindi_output, POST_PROCESS_OUTPUT, OUTPUT_FILE)
