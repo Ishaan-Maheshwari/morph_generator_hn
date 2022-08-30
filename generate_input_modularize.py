@@ -7,11 +7,10 @@ Write the output data into a file.
 """
 
 
-from logging import root
+
 import sys
 import re
 import subprocess
-from xmlrpc.client import FastMarshaller
 
 
 from wxconv import WXC
@@ -234,44 +233,46 @@ def handle_noun(root_words, gnp_value, case_info, seman_data, index_data, respec
             ) == 'sg' else 'p' if data[1].lower() == 'pl' else 's'
             category = 'n'
             case = 'o'
+            parsarg = 0
+            ppost = ''
             if "k1" in case_info[word]:
                 case = "d"
             elif "k2" in case_info[word] :
                 if 'anim' in seman_data[word]:
-                    root_word = root_word + ' ko'  #added for vibhakti
+                    ppost = 'ko'  #added for vibhakti
                 else:
                     case = 'd'
             elif "k3" in case_info[word] :
-                root_word = root_word + ' se'
+                ppost = 'se'
             elif "k4" in case_info[word] :
-                root_word = root_word + ' ko'
+                ppost = 'ko'
             elif "k5" in case_info[word] :
-                root_word = root_word + ' se'
+                ppost = 'se'
             elif "r6" in case_info[word] :
                 case = 'o'
                 nextNounIndex = getNextNounId(word, gnp_value, case_info, index_data)
                 if nextNounIndex != -1 :
                     gnp_nextNoun = gnp_value[nextNounIndex].strip('][').split(' ')
                     if gnp_nextNoun[0] == 'f':
-                        root_word = root_word + ' kI'
+                        ppost = 'kI'
                     else :
                         is_anim = True if ('anim' in seman_data[nextNounIndex]) else False
                         if checkPostPosition(nextNounIndex, case_info, IS_ANIM = is_anim, TAM_YA = False):
-                            root_word = root_word + ' ke'
+                            ppost = 'ke'
                         elif gnp_nextNoun[1] == 'pl':
-                            root_word = root_word + ' ke'
+                            ppost = 'ke'
                         else:
-                            root_word = root_word + ' kA'
+                            ppost = 'kA'
             elif "k7p" in case_info[word] :
-                root_word = root_word + ' meM'
+                ppost = 'meM'
             elif "k7t" in case_info[word] :
-                root_word = root_word + ' ko'
+                ppost = 'ko'
             elif "k7" in case_info[word] :
-                root_word = root_word + ' meM'
+                ppost = 'meM'
             elif "mk1" in case_info[word] :
-                root_word = root_word + ' se'
+                ppost = 'se'
             elif "jk1" in case_info[word] :
-                root_word = root_word + ' ko'
+                ppost = 'ko'
             else:
                 pass
             if root_word == 'addressee':
@@ -284,10 +285,18 @@ def handle_noun(root_words, gnp_value, case_info, seman_data, index_data, respec
                 category = 'p'
             else:
                 pass
+
+            #adding ppost to root if noun, adding to parsarg ig pronoun
+            if ppost != '':
+                if category == 'n':
+                    root_word = root_word + ' ' +ppost
+                else:
+                    parsarg = ppost
+            
             noun_info.append(
                 (int(index_data[word]),
                     root_word, category,
-                    case, gender, number))
+                    case, gender, number, parsarg))
         else :
             if(case_info[word] != ''):
                 dependency_info = case_info[word].split(':')[1]
@@ -330,8 +339,10 @@ def generate_input_for_morph_generator(input_data):
             morph_data = f'^{data[1]}$'
         elif data[2] == 'v' :
             morph_data = f'^{data[1]}<cat:{data[2]}><tam:{data[3]}><gen:{data[4]}><num:{data[5]}>$'
-        else:
+        elif data[2] == 'adj':
             morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><gen:{data[4]}><num:{data[5]}>$'
+        else:
+            morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><gen:{data[4]}><num:{data[5]}><parsarg:{data[6]}>$'
         morph_input_data.append(morph_data)
     return morph_input_data
 
