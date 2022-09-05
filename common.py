@@ -236,12 +236,12 @@ def extract_gnp(gnp_info):
     '''Extract GNP info in (gender,number,person) format.'''
     gnp_data = gnp_info.strip('][').split(' ')
     if len(gnp_data) != 3:
-        return 'm','s',''
+        return 'm','s','a'
     gender = 'm' if gnp_data[0].lower(
         ) == 'm' else 'f' if gnp_data[0].lower() == 'f' else 'm'
     number = 's' if gnp_data[1].lower(
         ) == 'sg' else 'p' if gnp_data[1].lower() == 'pl' else 's'
-    person = '' if gnp_data[2] in ('-','') else gnp_data[2]
+    person = 'a' if gnp_data[2] in ('-','') else gnp_data[2]
 
     return gender,number,person
 
@@ -254,7 +254,7 @@ def process_pronouns(pronouns):
         parsarg = 0
         gender, number, person = extract_gnp(pronoun[3])
         if "k1" in pronoun[4]:
-            if clean(pronoun[1]) in ('kOna','kyA') and pronoun[2] in ('anim','per'):
+            if clean(pronoun[1]) in ('kOna','kyA') and pronoun[2] not in ('anim','per'):
                 case = "d"
         else :
             if "k2" in pronoun[4] and pronoun[2] in ('anim','per'):
@@ -273,21 +273,20 @@ def process_pronouns(pronouns):
     return processed_pronouns
 
 def process_nouns(nouns):
-    '''Process nouns as (index, word, category, case, gender, number)'''
+    '''Process nouns as (index, word, category, case, gender, number, proper)'''
     processed_nouns = []
     for noun in nouns:
         category = 'n'
         case = 'o'
         gender, number, person = extract_gnp(noun[3])
-        # if noun[1] == "kiwAba_1":
-        #     gender = 'f'
+        proper = False if '_' in noun[1] else True
         if "k1" in noun[4]:
                 case = "d" 
         else :
             if "k2" in noun[4] and 'anim' not in noun[2]:
                 case = 'd'
-        processed_nouns.append( (noun[0], clean(noun[1]), category, case, gender, number, person) )
-        log(f'{noun[1]} processed as noun with case:{case} gen:{gender} num:{number}.')
+        processed_nouns.append( (noun[0], clean(noun[1]), category, case, gender, number, person, proper) )
+        log(f'{noun[1]} processed as noun with case:{case} gen:{gender} num:{number} proper:{proper}.')
     return processed_nouns
 
 def process_adjectives(adjectives, processed_nouns):
@@ -317,14 +316,17 @@ def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns):
     for verb in verbs:
         category = 'v'
         v = verb[1].split('-')
-        root = v[0]
+        root = clean(v[0])
         w = v[1].split('_')
         tam = w[0]
         for aux in w[1:]:
             if aux.isalpha():
                 aux_verbs.append(aux)
         gender, number, person = getVerbGNP(tam, depend_data, processed_nouns, processed_pronouns)
-        processed_verbs.append( (verb[0],clean(root),category,gender,number,person,tam) )
+        if root == 'hE' and tam in ('pres','past'):
+            alt_tam = {'pres':'hE', 'past':'WA'}
+            tam = alt_tam[tam]
+        processed_verbs.append( (verb[0],root,category,gender,number,person,tam) )
         log(f'{root} processed as verb with gen:{gender} num:{number} per:{person} tam:{tam}')
         for i in range(len(aux_verbs)):
             aux_info = auxmap_hin(aux_verbs[i])
@@ -336,9 +338,9 @@ def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns):
                 log(f'{aroot} processed as auxillary verb with gen:{gender} num:{number} per:{person} tam:{atam}')
     return processed_verbs,processed_auxverbs
 
-def collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs):
+def collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs,processed_indeclinables,processed_others):
     '''collect sort and return processed data.'''
-    return sorted(processed_pronouns+processed_nouns+processed_adjectives+processed_verbs+processed_auxverbs)
+    return sorted(processed_pronouns+processed_nouns+processed_adjectives+processed_verbs+processed_auxverbs+processed_indeclinables+processed_others)
 
 def generate_input_for_morph_generator(input_data):
     """Process the input and generate the input for morph generator"""
@@ -346,6 +348,8 @@ def generate_input_for_morph_generator(input_data):
     for data in input_data:
         if data[2] == 'p':
             morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><parsarg:{data[7]}><gen:{data[4]}><num:{data[5]}><per:{data[6]}>$'
+        elif data[2] == 'n' and data[7] == True:
+            morph_data = f'{data[1]}'
         elif data[2] == 'n' :
             morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><gen:{data[4]}><num:{data[5]}>$'
         elif data[2] == 'v' :
@@ -353,7 +357,9 @@ def generate_input_for_morph_generator(input_data):
         elif data[2] == 'adj':
             morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><gen:{data[4]}><num:{data[5]}>$'
         elif data[2] == 'indec':
-            pass
+            morph_data = f'{data[1]}'
+        elif data[2] == 'other':
+            morph_data = f'{data[1]}'
         else:
             morph_data = f'^{data[1]}$'
         morph_input_data.append(morph_data)
@@ -418,6 +424,52 @@ def join_indeclinables(transformed_data, processed_indeclinables, processed_othe
     '''Joins Indeclinable data with transformed data and sort it by index number.'''
     return sorted(transformed_data + processed_indeclinables + processed_others)
 
+def preprocess_postposition(processed_words, words_info,processed_verbs):
+    '''Calculates postposition to words wherever applicable according to rules.'''
+    PPdata = {}
+    new_processed_words = []
+    for data in processed_words:
+        if data[2] not in ('p','n','other'):
+            new_processed_words.append(data)
+            continue
+        data_info = getDataByIndex(data[0], words_info)
+        try:
+            data_case = False if data_info == False else data_info[4].split(':')[1].strip()
+        except IndexError:
+            data_case = False
+        ppost = ''
+        if data_case in ('k1','pk1') :
+            if findValue('yA', processed_verbs, index=6)[0] : #has TAM "yA"
+                if findValue('k2',words_info,index=4)[0] or findValue('k2p',words_info,index=4)[0]:
+                    ppost = 'ne'
+                    if data[2] != 'other':
+                        temp = list(data)
+                        temp[3] = 'o'
+                        data = tuple(temp)
+        elif data_case in ('k3','k5'):
+            ppost = 'se'
+        elif data_case in ('k4','k7t','jk1'):
+            ppost = 'ko'
+        elif data_case in ('k7','k7p'):
+            ppost = 'meM'
+        elif (data_case == 'k2') and data_info[2] in ("anim", "per"):
+            ppost = 'ko'
+        elif data_case == 'rt':
+            ppost = 'ke lie'
+        elif data_case == 'r6':
+            ppost = 'kI' if data[4] == 'f' else 'kA'
+        else:
+            pass
+        if data[2] == 'p' :
+            temp = list(data)
+            temp[7] = ppost if ppost != '' else 0
+            data = tuple(temp)
+        if data[2] == 'n' or data[2] == 'other':
+            # data[1] = data[1] + ' ' + ppost
+            PPdata[data[0]] = ppost
+        new_processed_words.append(data)
+    return new_processed_words,PPdata
+
 def process_postposition(transformed_fulldata, words_info,processed_verbs):
     '''Adds postposition to words wherever applicable according to rules.'''
     PPFulldata = []
@@ -445,6 +497,10 @@ def process_postposition(transformed_fulldata, words_info,processed_verbs):
             ppost = 'meM'
         elif (data_case == 'k2') and data_info[2] in ("anim", "per"):
             ppost = 'ko'
+        elif data_case == 'rt':
+            ppost = 'ke lie'
+        elif data_case == 'r6':
+            ppost = 'kI' if data[4] == 'f' else 'kA'
         else:
             pass
         if data[2] == 'p' :
@@ -453,6 +509,25 @@ def process_postposition(transformed_fulldata, words_info,processed_verbs):
             data[1] = data[1] + ' ' + ppost
         PPFulldata.append(tuple(data))
     return PPFulldata
+
+def add_postposition(transformed_fulldata, processed_postpositions):
+    '''Adds postposition to words wherever applicable according to rules.'''
+    PPFulldata = []
+    
+    for data in transformed_fulldata:
+        index = data[0]
+        if index in processed_postpositions :
+            temp = list(data)
+            ppost = processed_postpositions[index]
+            # if temp[2] == 'p' :
+            #     temp[7] = ppost if ppost != '' else 0
+            if temp[2] == 'n' or temp[2] == 'other':
+                temp[1] = temp[1] + ' ' + ppost
+            data = tuple(temp)
+        PPFulldata.append(data)
+    
+    return PPFulldata
+
 
 def rearrange_sentence(fulldata):
     '''Function comments'''
@@ -478,7 +553,7 @@ def write_hindi_text(hindi_output, POST_PROCESS_OUTPUT, OUTPUT_FILE):
 
 def write_hindi_test(hindi_output, POST_PROCESS_OUTPUT, src_sentence, OUTPUT_FILE, path):
     """Append the hindi text into the file"""
-    OUTPUT_FILE = 'TestResults.txt' #temporary for presenting
+    OUTPUT_FILE = 'TestResults.csv' #temporary for presenting
     with open(OUTPUT_FILE, 'a') as file:
         file.write(path.strip('verified_sent/')+',')
         file.write(src_sentence.strip('#')+',')

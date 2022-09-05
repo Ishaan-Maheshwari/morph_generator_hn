@@ -1,0 +1,3579 @@
+#Apa kahAz rahawe hEM?
+addressee,kahAz_1,raha_1-wA_hE_1 
+1,2,3
+,,
+[- - m],,
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+interrogative
+#aXyApaka aBI Aye hEM.
+aXyApaka_1,aBI_1,A_1-yA_hE_1
+1,2,3
+,,
+[m sg a],,
+3:k1,3:kr_vn,0:main
+,,
+def,,
+,,
+affirmative
+#baccA agaswa meM Pala KAwA hE.
+baccA_3,agaswa,Pala_1,KA_1-wA_hE_1
+1,2,3,4
+,,,
+[- sg a],,[- pl a],
+4:k1,4:k7,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#bacce janavarI meM Pala KAwe hEM.
+baccA_3,janavarI,Pala_1,KA_1-wA_hE_1
+1,2,3,4
+,,,
+[- pl a],,[- pl a],
+4:k1,4:k7t,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#baccA kya kAwA hE?
+baccA_3,kyA_1,KA_1-wA_hE_1
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k2,0:main
+,,
+,,
+,,
+interrogative
+#bacce maMgalavAra ko Pala KAwe hEM.
+baccA_3,maMgalavAra_1,Pala_1,KA_1-wA_hE_1
+1,2,3,4
+,,,
+[- pl a],,[- pl a],
+4:k1,4:k7,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#bacce Pala KAwe hEM.
+baccA_3,Pala_1,KA_1-wA_hE_1
+1,2,3
+,,
+[- pl a],[- pl a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#bacce somavAra ko Pala KAwe hEM.
+baccA_3,somavAra_1,Pala_1,KA_1-wA_hE_1
+1,2,3,4
+,,,
+[- pl a],,[- pl a],
+4:k1,4:k7,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#bacce Pala KAwe hEM.
+baccA_3,Pala_1,KA_1-wA_hE_1
+1,2,3
+,,
+[- pl a],[- pl a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#betoM ne Kewa meM bIja bo xiyA.
+betA_1,Kewa_1,bIja_1,bo_3-0_xiyA_1
+1,2,3,4
+,,,
+[m pl a],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2,0:main
+,,,
+def,def,def,
+,,,
+affirmative
+#gAyeM GAsa KawIM hEM.
+gAya_1,GAsa_1,KA_1-wA_hE_1
+1,2,3
+,mass,
+[- pl a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#jAnavara saBA meM Aye.
+jAnavara_1,saBA_3,A_1-yA_1
+1,2,3
+,,
+[- pl a],[- sg a],
+3:k1,3:k2p,0:main
+,,
+def,def,
+,,
+affirmative
+#John kA betA vixyAlaya meM paDawA hE
+John,betA_1,vixyAlaya_1,paDa_2-wA_hE_1
+1,2,3,4
+per,,,
+[m sg a],[m sg a],[- sg a],
+2:r6,4:k1,4:k7p,0:main
+,,,
+,,def,
+,,,
+affirmative
+#kyA Apa jA rahe hEM?
+,addressee,jA_1-0_rahA_hE_1
+1,2,3
+yes_no_qsn,,
+,[- - m],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#kyA rAma jA rahA hE?
+,rAma,jA_1-0_rahA_hE_1
+1,2,3
+yes_no_qsn,per,
+,[- sg a],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#ladakA bagIce meM nayI kiwAba paDa rahA hE.
+ladakA_1,bagIcA_1,nayA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4,5
+,,,,
+[m sg a],[- sg a],,[- sg a],
+5:k1,5:k7p,4:mod,5:k2,0:main
+,,,,
+def,def,,,
+,,,,
+affirmative
+#ladakA calacciwra xeKa rahA hE.
+ladakA_1,calacciwra_1,xeKa_3-0_rahA_hE_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative
+#ladakA kiwAba paDa rahA hE.
+ladakA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative
+#ladakA kiwAbeM paDa rahA hE.
+ladakA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3
+,,
+[m sg a],[- pl a],
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative
+#ladakA nayI kiwAba paDa rahA hE.
+ladakA_1,nayA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+def,,def,
+,,,
+affirmative
+#ladakA Sahara se AyA hE.
+ladakA_1,Sahara_1,A_1-yA_hE_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k5,0:main
+,,
+def,def,
+,,
+affirmative
+#ladakA vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
+ladakA_1,vixyAlaya_1,bagIcA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4,5
+,,,,
+[m sg a],[- sg a],[- sg a],[- sg a],
+5:k1,5:k7p,5:k7p,5:k2,0:main
+,,,,
+def,def,def,,
+,,,,
+affirmative
+#ladakA vixyAlaya meM paDawA hE.
+ladakA_1,vixyAlaya_1,paDa_2-wA_hE_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,,
+,,
+affirmative
+#ladake ke liye jaMgala se Pala lAo!
+ladakA_1,jaMgala_1,Pala_1,lA_1-o_1
+1,2,3,4
+,,,
+[- sg a],[- sg a],[- pl a],
+4:rt,4:k5,4:k2,0:main
+,,,
+def,def,,
+,,,
+imperative
+#ladake ne KAnA nahIM KAyA.
+ladakA_1,KAnA_1,nahIM_1,KA_1-yA_1
+1,2,3,4
+,mass,,
+[m sg a],[- - a],,
+4:k1,4:k2,,0:main
+,,,
+def,,,
+,,4:neg,
+negative
+#ladake ne nayI kiwAba paDI.
+ladakA_1,nayA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+def,,,
+,,,
+affirmative
+#mEca kisne jIwA?
+mEca_1,kOna_1,jIwa_7-yA_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k2,3:k1,0:main
+,,
+def,,
+,,
+interrogative
+#mEM Aja AyA.
+speaker,Aja_1,A_1-yA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#mEM A rahA hUz.
+speaker,A_1-0_rahA_hE_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#mEM Gara A rahA hUz.
+speaker,Gara_1,A_1-0_rahA_hE_1
+1,2,3
+,,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#mEM john ke lie Sahara se AyA.
+speaker,John,Sahara_1,A_1-yA_1
+1,2,3,4
+,per,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEM kala AUzgA.
+speaker,kala_2,A_1-gA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#mEM kala AyA.
+speaker,kala_1,A_1-yA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#mEM kiwAbeM paDa rahA hUz.
+speaker,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3
+,,
+[- sg u],[- pl a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#mEM ladake ke lie Sahara se AyA.
+speaker,ladakA_1,Sahara_1,A_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[m sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#mEMne acCA Pala KAyA.
+speaker,acCA_1,Pala_1,KA_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEMne acCI kiwAba paDI hE.
+speaker,acCA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEMne acCI kiwAba paDI.
+speaker,acCA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative#mEMne aMXe ladake ko xeKA.
+speaker,aMXA_1,ladakA_1,xeKa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[m sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEMne aMXe ladake ko xeKA.
+speaker,aMXA_1,ladakA_1,xeKa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[m sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEMne aMXe ladake ko XIre se XakkA mArA.
+speaker,aMXA_1,ladakA_1,XIre+se_1,XakkA+mAra_1-yA_1
+1,2,3,4,5
+,,,,
+[- sg u],,[m sg a],,
+5:k1,3:mod,5:k2,5:kr_vn,0:main
+,,,,
+,,def,,
+,,,,
+affirmative
+#mEMne nayA Pala KAyA.
+speaker,nayA_1,Pala_1,KA_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEMne naye ladake ko xeKA.
+speaker,nayA_1,ladakA_1,xeKa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative 
+#mEMne nayI kiwAba paDI.
+speaker,nayA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEMne nayI kiwAba paDI.
+speaker,nayA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEMne pahalI kiwAba paDI.
+speaker,pahalA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:card,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEM saBA ke lie Sahara se AyA.
+speaker,saBA_3,Sahara_1,A_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#mEM Sahara jA rahA hUz.
+speaker,Sahara_1,jA_1-0_rahA_hE_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,def,
+,,
+affirmative
+#mEM Sahara meM eka vixyAlaya gayA.
+speaker,Sahara_1,vixyAlaya_1,jA_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2p,0:main
+,,,
+,def,,
+,,,
+affirmative
+#mEM Sahara meM vixyAlaya meM gayA.
+speaker,Sahara_1,vixyAlaya_1,jA_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2p,0:main
+,,,
+,def,,
+,,,
+affirmative
+#mEM usake lie Sahara gayA.
+ladakA_1,vaha,Sahara_1,jA_1-yA_1
+1,2,3,4
+,,,
+[m sg a],[m sg a],[- sg a],
+4:k1,4:rt,4:k2p,0:main
+,,,
+def,,def,
+,,,
+affirmative
+#mEM usake lie Sahara se AyA.
+speaker,vaha,Sahara_1,A_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[m sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEM usase eka kiwAba le rahA hUz.
+speaker,vaha,eka_1,kiwAba_1,le_1-0_rahA_hE_1
+1,2,3,4,5
+,,,,
+[m sg u],[m sg a],,[- sg a],
+5:k1,5:k5,4:ord,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+#mEM usase kiwAba le rahA hUz.
+speaker,vaha,kiwAba_1,le_1-0_rahA_hE_1
+1,2,3,4
+,,,
+[m sg u],[m sg a],[- sg a],
+4:k1,4:k5,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEM XIre calawA hUz.
+speaker,XIre_1,cala_6-wA_hE_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:kr_vn,0:main
+,,
+,,
+,,
+affirmative
+#merA xoswa bagIce meM Kela rahA hE.
+speaker,xoswa_1,bagIcA_1,Kela_1-0_rahA_hE_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+2:r6,4:k1,4:k7p,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mere liye jaMgala se Pala lAo!
+speaker,jaMgala_1,Pala_1,lA_1-o_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- pl a],
+4:rt,4:k5,4:k2,0:main
+,,,
+,def,,
+,,,
+imperative
+#rAma john ke liye Sahara se AyA.
+rAma,John,Sahara_1,A_1-yA_1
+1,2,3,4
+per,per,,
+[- sg a],[- sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,,def,
+,,,
+affirmative
+#rAma xo kiwAbeM paDa rahA hE.
+rAma,xo_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4
+per,,,
+[- sg a],,[- pl a],
+4:k1,3:ord,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#rAvana mArA gayA.
+rAvaNa,mAra_1-yA_gayA_1
+1,2
+per,
+[- sg a],
+2:k2,0:main
+,
+,
+,
+pass-affirmative
+#rAvaNa rAma ke xvArA mArA gayA WA.
+rAvaNa,rAma,mAra_1-yA_gayA_WA_1
+1,2,3
+per,per,
+[- sg a],[- sg a],
+3:k2,3:k1,0:main
+,,
+,,
+,,
+pass-affirmative
+#Sahara jAo!
+Sahara_1,jA_1-o_1
+1,2
+,
+[- sg a],
+2:k2p,0:main
+,
+def,
+,
+imperative
+#Sera ne yuxXa ke liye jaMgala meM saBA bulAI.
+Sera_1,yuxXa_1,jaMgala_1,saBA_3,bulA_1-yA_1
+1,2,3,4,5
+,,,,
+[m sg a],[- sg a],[- sg a],[- sg a],
+5:k1,5:rt,5:k7p,5:k2,0:main
+,,,,
+def,def,def,def,
+,,,,
+affirmative
+#unhone Kewa meM bIja bo xiye.
+vaha,Kewa_1,bIja_1,bo_3-0_xiyA_1
+1,2,3,4
+,,,
+[m pl a],[- sg a],[- pl a],
+4:k1,4:k7p,4:k2,0:main
+,,,
+,def,,
+,,,
+affirmative
+#usane KAnA nahIM KAyA.
+vaha,KAnA_1,nahIM_1,KA_1-yA_1
+1,2,3,4
+,mass,,
+[f sg a],[- sg a],,
+4:k1,4:k2,,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#vaha aMXe AxamI kI sahAyawA karegA.
+vaha,aMXA_1,AxamI_1,sahAyawA+kara_1-gA_1
+1,2,3,4
+,,,
+[m sg a],,[m sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#vaha kaba jA rahA hE?
+vaha,kaba_1,jA_1-0_rahA_hE_1
+1,2,3
+,,
+[m sg a],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+interrogative
+#vaha KAnA KA rahA hE.
+vaha,KAnA_1,KA_1-0_rahA_hE_1
+1,2,3
+,mass,
+[m sg a],[- - a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#ve calacciwra xeKa rahe hEM.
+vaha,calacciwra_1,xeKa_3-0_rahA_hE_1
+1,2,3
+,,
+[m pl a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#wuma kele KA rahe ho.
+addressee,kelA_1,KA_1-0_rahA_hE_1
+1,2,3
+,,
+[- - m],[- pl a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#mEM so raha hUz.
+speaker,so_1-0_rahA_hE_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#rAma ne muJe kiwAba xI.
+rAma,speaker,kiwAba_1,xe_1-yA_1
+1,2,3,4
+per,,,
+[m sg a],[- sg u],[- sg a],
+4:k1,4:k4,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#rAma acCA hE.
+rAma,acCA_1,hE_1-pres
+1,2,3
+per,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#rAma dAktara hE.
+rAma,dAktara_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#rAma acCA dAktara hE.
+rAma,acCA_1,dAktara_1,hE_1-pres
+1,2,3,4
+per,,,
+[- sg a],,[- sg a],
+4:k1,3:mod,4:k1s,0:main
+,,,
+,,,
+,,,
+affirmative
+#rAma xillI meM rahawA hE.
+rAma,xillI,raha_1-wA_hE_1
+1,2,3
+per,per,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#ladakA xillI meM hE.
+ladakA_1,xillI,hE_1-pres
+1,2,3
+,per,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,,
+,,
+affirmative
+#rAma bagIce meM hE.
+rAma,bagIcA_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#rAma xillI meM hE.
+rAma,xillI,hE_1-pres
+1,2,3
+per,place,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#mEM xillI meM hUz.
+speaker,xillI,hE_1-pres
+1,2,3
+,per,
+[- sg u],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#rAma ko buKAra hE.
+rAma,buKAra_1,hE_1-pres
+1,2,3
+per,mass,
+[m sg a],[- sg a],
+3:k4a,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#ladake ko buKAra hE.
+ladakA_1,buKAra_1,hE_1-pres
+1,2,3
+,mass,
+[m sg a],[- sg a],
+3:k4a,3:k1,0:main
+,,
+def,,
+,,
+affirmative
+#muJe buKAra hE.
+speaker,buKAra_1,hE_1-pres
+1,2,3
+,mass,
+[- sg u],[- sg a],
+3:k4a,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#rAma ke pAsa kiwAba hE.
+rAma,kiwAba_1,state_possession-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+possessor,possessed,0:main
+,,
+,def,
+,,
+affirmative
+#mere pAsa kiwAba hE.
+speaker,kiwAba_1,state_possession-pres
+1,2,3
+,,
+[- sg u],[- sg a],
+possessor,possessed,0:main
+,,
+,def,
+,,
+affirmative
+#ladake ke pAsa kiwAba hE.
+ladakA_1,kiwAba_1,state_possession-pres
+1,2,3
+,,
+[m sg a],[- sg a],
+possessor,possessed,0:main
+,,
+def,def,
+,,
+affirmative
+#kyA rAma dAktara hE?
+,rAma,dAktara_1,hE_1-pres
+1,2,3,4
+yes_no_qsn,per,,
+,[m sg a],[- sg a],
+,4:k1,4:k1s,0:main
+,,,
+,,,
+,,,
+interrogative
+#kyA rAma ke pAsa kiwAba hE?
+,rAma,kiwAba_1,state_possession-pres
+1,2,3,4
+yes_no_qsn,per,,
+,[m sg a],[- sg a],
+,possessor,possessed,0:main
+,,,
+,,def,
+,,,
+interrogative
+#kyA wuma xillI meM ho?
+kyA,addressee,xillI,hE_1-pres
+1,2,3,4
+yes_no_qsn,,per,
+,[- - m],[- sg a],
+,4:k1,4:k7p,0:main
+,,,
+,,,
+,,,
+interrogative
+#kyA wumhe buKAra hE?
+,addressee,buKAra_1,hE_1-pres
+1,2,3
+yes_no_qsn,,mass,
+,[- - m],[- sg a],
+,4:k4a,4:k1,0:main
+,,,
+,,,
+,,,
+interrogative
+#muJe Gara jAnA cAhie.
+speaker,Gara_1,jA_1-nA_cAhie_1
+1,2,3
+,,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#muJe sonA cAhie.
+speaker,so_1-nA_cAhie_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#wuma keloge.
+addressee,Kela_1-gA_1
+1,2
+,
+[- - m],
+2:k1,0:main
+,
+,
+,
+affirmative
+#rAma paDegA.
+rAma,paDa_2-gA_1
+1,2
+per,
+[m sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+#mEM Gara jA sakawA hUzgayA hUzgA.
+speaker,Gara_1,jA_1-0_sakawA_hE_2
+1,2,3
+,,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#vaha Gara jA sakawA hE.
+vaha,Gara_1,jA_1-0_sakawA_hE_1
+1,2,3
+,,
+[m sg a],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#somavAra pahalA xina hE.
+somavAra_1,pahalA_1,xina_1,hE_1-pres
+1,2,3,4
+,,,
+,,[- sg a],
+4:k1,3:card,4:k1s,0:main
+,,,
+,,def,
+,,,
+affirmative
+#hAra mahilA ke gale meM hE.
+hAra_4,mahilA_1,galA_1,hE_1-pres
+1,2,3,4
+,,,
+[- sg a],[- sg a],[- sg a],
+4:k1,3:r6,4:k7p,0:main
+,,,
+def,def,,
+,,,
+affirmative
+#kyA wuma nahIM keloge?
+,addressee,nahIM_1,Kela_1-gA_1,
+1,2,3,4
+yes_no_qsn,,,
+,[- - m],,
+,4:k1,,0:main
+,,,
+,,,
+,,4:neg,
+interrogative
+#mEM rUsI nahIM bola sakawA hUz.
+speaker,rUsI,nahIM_1,bola_4-0_sakawA_hE_1
+1,2,3,4
+,per,,
+[- sg u],[- sg -],,
+4:k1,4:k2,,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#Apa kahAz raha sakawe ho?
+addressee,kahAz_1,raha_1-0_sakawA_hE_1
+1,2,3
+,,
+[- - m],,
+3:k1,3:k2,0:main
+,,
+,,
+,,
+interrogative
+#rAma ko Pala KAnA hogA.
+rAma,Pala_1,KA_1-nA_hogA_1
+1,2,3
+per,,
+[- sg a],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#betoM ko Kewa meM bIja bonA cAhie.
+betA_1,Kewa_1,bIja_1,bo_3-nA_cAhie_2
+1,2,3,4
+,,,
+[- pl a],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2,0:main
+,,,
+def,def,def,
+,,,
+affirmative
+#ladake ko nayI kiwAba paDanI cAhie.
+ladakA_1,nayA_1,kiwAba_1,paDa_1-nA_cAhie_2
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+def,,def,
+,,,
+affirmative
+#ladake ko vixyAlaya meM paDanA cAhie.
+ladakA_1,vixyAlaya_1,paDa_2-nA_cAhie_2
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,,
+,,
+affirmative
+#muJe kala AnA hogA.
+speaker,kala_2,A_1-nA_hogA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#mEM rUsI bola sakawA hUz.
+speaker,rUsI,bola_4-0_sakawA_hE_2
+1,2,3
+,per,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#kyA mEM ApakI sahAyawA kara sakawA hUz?
+,speaker,addressee,sahAyawA+kara_1-0_sakawA_hE_2
+1,2,3,4
+yes_no_qsn,,,
+,[- sg u],[- - m],
+,4:k1,4:k2,0:main
+,,,
+,,,
+,,,
+interrogative
+#Apa kahAz raha sakawe ho?
+addressee,kahAz_1,raha_1-0_sakawA_hE_2
+1,2,3
+,,
+[- - m],,
+3:k1,3:k2,0:main
+,,
+,,
+,,
+interrogative
+#vaha Gara nahIM jA sakawA hE.
+vaha,Gara_1,nahIM_1,jA_1-0_sakawA_hE_2
+1,2,3,4
+,,,
+[m sg a],[- sg -],,
+4:k1,4:k2,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#mEM Kela Kela sakawA hUz.
+speaker,Kela_2,Kela_1-0_sakawA_hE_3
+1,2,3
+,,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#mEM JUTa bola sakawA hUz.
+speaker,JUTa_4,bola_4-0_sakawA_hE_3
+1,2,3
+,,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#kyA mEM ApakI sahAyawA kara sakawA hUz?
+,speaker,addressee,sahAyawA+kara_1-0_sakawA_hE_3
+1,2,3,4
+yes_no_qsn,,,
+,[- sg u],[- - m],
+,4:k1,4:k2,0:main
+,,,
+,,,
+,,,
+interrogative
+#kyA mEM jA sakawA hUz?
+,speaker,jA_1-0_sakawA_hE_3
+1,2,3
+yes_no_qsn,,
+,[- - u],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#kyA mEM kala Gara jA sakawA hUz?
+,speaker,kala_2,Gara_1,jA_1-0_sakawA_hE_3
+1,2,3,4,5
+yes_no_qsn,,,,
+,[- sg u],,,
+,5:k1,5:k7,5:k2,0:main
+,,,,
+,,,,
+,,,,
+interrogative
+#vaha Gara nahIM jA sakawA hE.
+vaha,Gara_1,nahIM_1,jA_1-0_sakawA_hE_3
+1,2,3,4
+,,,
+[m sg a],[- sg -],,
+4:k1,4:k2,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#muJe xOdZanA cAhie.
+speaker,xOdZa_4-nA_cAhie_2
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#kyA muJe jAnA cAhie?
+,speaker,jA_1-nA_cAhie_1
+1,2,3
+yes_no_qsn,,
+,[- sg u],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#use Gara nahIM jAnA cAhie.
+vaha,Gara_1,nahIM_1,jA_1-nA_cAhie_1
+1,2,3,4
+,,,
+[m sg a],[- sg -],,
+4:k1,4:k2,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#muJe sonA cAhie.
+speaker,so_1-nA_cAhie_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#amiwa ko Gara jAnA cAhie.
+amit,Gara_1,jA_1-nA_cAhie_1
+1,2,3
+per,,
+[m sg a],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#vaha so sakawA hE.
+vaha,so_1-0_sakawA_hE_1
+1,2
+,
+[m sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+#mEM kala Kela KelUMgA.
+speaker,kala_2,Kela_2,Kela_1-gA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,4:k7,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#kyA wuma keloge?
+,addressee,Kela_1-gA_1
+1,2,3
+yes_no_qsn,,
+,[- - m],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#Apa kala KeleMge.
+addressee,kala_2,Kela_1-gA_1
+1,2,3
+,,
+[- - m],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#rAma dAktara nahIM hE.
+rAma,dAktara_1,nahIM_1,hE_1-pres
+1,2,3,4
+per,,,
+[m sg a],[- sg a],,
+4:k1,4:k1s,,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#rAma xillI meM nahIM hE.
+rAma,xillI,nahIM_1,hE_1-pres
+1,2,3,4
+per,place,,
+[m sg a],[- sg a],,
+4:k1,4:k7p,,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#rAvaNa rAma ke xvArA laMkA meM mArA gayA.
+rAvaNa,rAma,laMkA,mAra_1-yA_gayA_WA_1
+1,2,3,4
+per,per,place,
+[- sg a],[- sg a],[- sg a],
+4:k2,4:k1,4:k7p,0:main
+,,,
+,,,
+,,,
+pass-affirmative
+#prawyeka baccA Kela rahA hE.
+prawyeka_1,baccA_2,Kela_1-0_rahA_hE_1
+1,2,3
+,,
+,[- sg a],
+2:dem,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#hara baccA Kela rahA hE.
+hara_2,baccA_2,Kela_1-0_rahA_hE_1
+1,2,3
+,,
+,[- sg a],
+2:dem,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#saBI bacce Kela rahe hEM.
+saBI_1,baccA_2,Kela_1-0_rahA_hE_1
+1,2,3
+,,
+,[- pl a],
+2:dem,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#prawyeka pedZa lambA hE.
+prawyeka_1,pedZa_1,lambA_4,hE_1-pres
+1,2,3,4
+,,,
+[- sg ],,,
+2:dem,4:k1,4:k1s,0:main
+,,,
+,,,
+,,,
+affirmative
+#kuCa bacce koI Kela Kela sakawe hEM.
+kuCa_1,baccA_2,koI_1,Kela_2,Kela_1-0_sakawA_hE_1
+1,2,3,4,5
+,,,,
+,[- pl a],,[- sg a],
+2:dem,5:k1,4:dem,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+#bacce koI Kela nahIM KeleMge.
+baccA_2,koI_1,Kela_2,nahIM_1,Kela_1-gA_1
+1,2,3,4,5
+,,,,
+[- pl a],,[- sg a],,
+5:k1,3:dem,5:k2,5:neg,0:main
+,,,,
+,,,,
+,,,,
+negative
+#rAma ke pAsa WodZA pAnI hE.
+rAma,WodZA_2,pAnI_1,state_possession-pres
+1,2,3,4
+per,,mass,
+[m sg a],,[- sg a],
+possessor,3:dem,possessed,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEM soUMgA.
+speaker,so_1-gA_2
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#kyA Apa AeMge?
+,addressee,A_1-gA_2
+1,2,3
+yes_no_qsn,,
+,[- - m],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#Apa kala KeleMge.
+addressee,kala_2,Kela_1-gA_2
+1,2,3
+,,
+[- - m],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#kyA wuma nahIM keloge?
+,addressee,nahIM_1,Kela_1-gA_2
+1,2,3,4
+yes_no_qsn,,,
+,[- - m],,
+,4:k1,,0:main
+,,,
+,,,
+,,4:neg,
+interrogative
+#kala varRA hogI.
+kala_2,varRA+ho_1-gA_1
+1,2
+,
+,
+2:k7t,0:main
+,
+,
+,
+affirmative
+#vaha xillI meM rahawA WA.
+vaha,xillI,raha_1-wA_WA_1
+1,2,3
+,per,
+[m sg a],,
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#mEM so rahA WA.
+speaker,so_1-0_rahA_WA_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#mere xvArA KAnA KAyA gayA WA.
+speaker,KAnA_1,KA_1-yA_gayA_WA_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+pass-affirmative
+#Sahara jAie!
+Sahara_1,jA_1-ie_1
+1,2
+,,
+[- sg a],
+2:k2p,0:main
+,
+def,
+,
+imperative
+#Sahara jAiegA.
+Sahara_1,jA_1-iegA_1
+1,2
+,,
+[- sg a],
+2:k2p,0:main
+,
+def,
+,
+imperative
+#mEM so cukA WA.
+speaker,so_1-0_cukA_WA_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#vaha so cukA hogA.
+vaha,so_1-0_cukA_hogA_1
+1,2
+,
+[m sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+#mEM so jAwA WA.
+speaker,so_1-0_jAwA_WA_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#Sahara jA.
+Sahara_1,jA_1-0_1
+1,2
+,,
+[- sg a],
+2:k2p,0:main
+,
+def,
+,
+imperative
+#rAma ne KAnA nahIM KAyA WA
+rAma,KAnA_1,nahIM_2,KA_1-yA_WA_1
+1,2,3,4
+per,,,
+[m sg a],[- sg a],
+4:k1,4:k2,,0:main
+,,,
+,def,,
+,,4:neg,
+negative
+#rAma Sahara meM WA.
+rAma,Sahara_1,hE_1-past
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,def,
+,,
+affirmative
+#xillI A.
+xillI,A_1-0_1
+1,2
+place,
+[- sg a],
+2:k2p,0:main
+,
+,
+,
+imperative
+#rAma ne kAma kiyA WA
+rAma,kAma_3,kara_9-yA_WA_2
+1,2,3
+per,,
+[m sg a],[- - -]
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#rAma ne KAnA KAyA hE.
+rAma,KAnA_1,KA_1-yA_hE_1,
+1,2,3
+per,,,
+[m sg a],[- sg a],
+3:k1,3:k2,0:main
+,,,
+,def,,
+,,,
+affirmative
+#BEravanAWa mAz vERNo ke xvArA katarA  meM mArA gayA hE.
+BEravanAWa,mAz_vERNo,katarA,mAra_1-yA_gayA_hE_2
+1,2,3,4
+per,per,place,
+[- sg a],[- sg a],[- sg a],
+4:k2,4:k1,4:k7p,0:main
+,,,
+,,,
+,,,
+pass-affirmative
+#rAvaNa rAma ke xvArA laMkA meM mArA gayA hE.
+rAvaNa,rAma,laMkA,mAra_1-yA_gayA_hE_1
+1,2,3,4
+per,per,place,
+[- sg a],[- sg a],[- sg a],
+4:k2,4:k1,4:k7p,0:main
+,,,
+,,,
+,,,
+pass-affirmative
+#usake xvArA KAnA KAyA gayA WA.
+vaha,KAnA_1,KA_1-yA_gayA_WA_2
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+pass-affirmative
+#mEMne Pala KA liyA hogA.
+speaker,Pala_1,KA_1-0_liyA_hogA_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#rAma sonA cAhawA hE.
+rAma,so_1-nA_cAhawA_hE_1
+1,2
+per,
+[m sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+#KAnA mere xvArA KAyA gayA.
+KAnA_1,speaker,KA_1-yA_gayA_1
+1,2,3
+,,
+[- sg a],[- sg u],
+3:k2,3:k1,0:main
+,,
+def,,
+,,
+pass-affirmative
+#kyA rAvaNa rAma ke xvArA mArA gayA WA?
+kyA,rAvaNa,rAma,mAra_1-yA_gayA_WA_1
+1,2,3,4
+yes_no_qsn,per,per,
+,[- sg a],[- sg a],
+,4:k2,4:k1,0:main
+,,,
+,,,
+,,,
+pass-interrogative
+#mere xvArA KAnA KAyA gayA WA.
+speaker,KAnA_1,KA_1-yA_gayA_WA_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+pass-affirmative
+#lomadZI BUKI WI
+lomadZI_1,BUKA_1,hE_1-past
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#usane eka Kewa xeKA
+vaha,eka_1,Kewa_1,xeKa_1-yA_1
+1,2,3,4
+,,,
+[- sg a],,[- sg a],
+4:k1,3:ord,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#Kewa meM bahuwa aMgUra We
+Kewa_1,bahuwa_3,aMgUra_1,state_possession-past
+1,2,3,4
+,,,
+[- sg a],,[- pl a],
+possessor,3:mod,possessed,0:main
+,,,
+def,,,
+,,,
+affirmative
+#aMgUra rasIle  We.
+aMgUra_1,rasIlA_1,hE_1-past
+1,2,3
+,,
+[- pl a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#vaha bujurga AxamI kI sahAyawA karawA hE.
+vaha,bujurga_1,AxamI_1,sahAyawA+kara_1-wA_hE_1
+1,2,3,4
+,,,
+[m sg a],,[m sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#rajawa ne rAXA ko bawAyA
+rajawa,rAXA,bawA_3-yA_1
+1,2,3
+per,per,
+[m sg a],[f sg a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#mEM Sivama ke lie Sahara se AyA.
+speaker,Sivama,Sahara_1,A_1-yA_1
+1,2,3,4
+,per,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEMne naye ladake ko xeKA.
+speaker,nayA_1,ladakA_1,xeKa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#mEMne aMXe ladake ko xeKA.
+speaker,aMXA_1,ladakA_1,xeKa_1-yA_1
+1,2,3
+,,def,
+[- sg u],,[m sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#Sivama ne aMXe ladake ko XIre se XakkA mArA.
+Sivama,aMXA_1,ladakA_1,XIre+se_1,XakkA+mAra_1-yA_1
+1,2,3,4,5
+per,,,,
+[m sg u],,[m sg a],,
+5:k1,3:mod,5:k2,5:kr_vn,0:main
+,,,,
+,,def,,
+,,,,
+affirmative
+#rAma dAktara hE.
+rAma,dAktara_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#mEMne kiwAba paDI.
+speaker,kiwAba_1,paDa_1-yA_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#mEMne acCI kiwAba paDI.
+speaker,acCA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#XarAwala SikRA meM hE.
+XarAwala_1,SikRA_1,hE_1-pres
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,def,
+,,
+affirmative
+#rAma ke pAsa lABa hE.
+rAma,lABa_3,state_possession-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+possessor,possessed,0:main
+,,
+,def,
+,,
+affirmative
+#jaMgala meM Sera WA.
+jaMgala_1, Sera_1,hE_1-past
+1,2,3
+,,
+[- sg a],[m sg a],
+3:k7p,3:k1,0:main
+,,
+def,,
+,,
+affirmative
+#kyA rAma dAktara hE ?
+,rAma,dAktara_1,hE_1-pres
+1,2,3,4
+yes_no_qsn,per,,
+,[m sg a],[- sg a],
+,4:k1,4:k1s,0:main
+,,,
+,,,
+,,,
+interrogative
+#muJe sonA cAhie
+speaker,so_1-nA_cAhie_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#mEM kala AUMgA.
+speaker,kala_2,A_1-gA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#mEM saBA ke lie Sahara AyA
+speaker,saBA_3,Sahara_1,A_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:rt,4:k2p,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#Delhi Ao.
+Delhi,A_1-0_1
+1,2
+place,
+[- sg a],
+2:k2p,0:main
+,
+,
+,
+imperative
+#rAma dAktara hE.
+rAma,dAktara_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#SaharI rAjA jaMgala AyA.
+SaharI_1,rAjA_1,jaMgala_1, A_1-yA_1
+1,2,3,4
+,,,
+,[m sg a],[- sg a],
+2:mod,4:k1,4:k2p,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#Sera rAjA ko xeKA.
+Sera_1, rAjA_1, xeKa_1-yA_1
+1,2,3
+,,
+[m sg a],[m sg a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#Sera ne jAnavaroM ko AxeSa xiyA.
+Sera_1, jAnavara_1, AxeSa+xe_1-yA_1
+1,2,3
+,,
+[m sg a], [- pl a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#mEM so rahA WA
+speaker,so_1-0_rahA_WA_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#rAju ko buKAra hE
+rAju,buKAra_1,hE_1-pres
+1,2,3
+per,mass,
+[m sg a],[- sg a],
+3:k4a,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#Aja bAriSa huI WI
+Aja_1,bAriSa_1-yA_WA_2
+1,2
+,
+,
+2:k7t,0:main
+,
+,
+,
+affirmative
+#kyA wuma ko buKAra hE
+,addressee,buKAra_1,hE_1-pres
+1,2,3,4
+yes_no_qsn,,mass,
+,[- - m],[- sg a],
+,4:k4a,4:k1,0:main
+,,,
+,,,
+,,,
+interrogative
+#pariNAma burA WA
+pariNAma_1, burA_2,hE_1-past
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#mEM Delhi meM hUz.
+speaker,Delhi,hE_1-pres
+1,2,3
+,place,
+[- sg u],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#kyA wuma Delhi meM ho?
+kyA,addressee,Delhi,hE_1-pres
+1,2,3,4
+yes_no_qsn,,place,
+,[- - m],[- sg a],
+,4:k1,4:k7p,0:main
+,,,
+,,,
+,,,
+interrogative
+#bacce Pala KAwe hEM.
+baccA_1,Pala_1,KA_1-wA_hE_1
+1,2,3
+,,
+[- pl a],[- pl a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#somavAra pahalA xina hE.
+somavAra_1,pahalA_1,xina_1,hE_1-pres
+1,2,3,4
+,,,
+,,[- sg a],
+4:k1,3:card,4:k1s,0:main
+,,,
+,,def,
+,,,
+affirmative
+#muJe xOdZanA cAhie.
+speaker,xOdZa_4-nA_cAhie_2
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#muJe sonA cAhie.
+speaker,so_1-nA_cAhie_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#ladakA vixyAlaya meM paDawA hE.
+ladakA_1,vixyAlaya_1,paDa_2-wA_hE_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,def,
+,,
+affirmative
+#KAnA mere xvArA KAyA gayA WA.
+KAnA_1,speaker,KA_1-yA_gayA_WA_1
+1,2,3
+mass,,
+[- sg a],[- sg u],
+3:k2,3:k1,0:main
+,,
+,,,
+,,,
+pass-affirmative
+#ladakA vixyAlaya ke bagIce meM kiwAba paDa rahA hE.
+ladakA_1,vixyAlaya_1,bagIcA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4,5
+,,,,
+[m sg a],[- sg a],[- sg a],[- sg a],
+5:k1,3:r6,5:k7p,5:k2,0:main
+,,,,
+def,def,,,
+,,,,
+affirmative
+#rAjA ne senA ko AxeSa xiyA.
+rAjA_1, senA_1, AxeSa+xe_1-yA_1
+1,2,3
+,,
+[m sg a], [- pl a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#haMsa cale gae.
+haMsa_1, cale+jA_3-yA_1
+1,2
+,
+[- pl a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#haMsa sabaka sIKa gaye.
+haMsa_1, sabaka_1, sIKa_6-yA_1
+1,2,3
+,,
+[- pl a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative
+#rAjA rAjamahala se AyA.
+rAjA_1,rAjamahala_1,A_1-yA_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k5,0:main
+,,
+,def,
+,,
+affirmative
+#use Gara nahIM jAnA cAhie.
+vaha,Gara_1,jA_1-nA_cAhie_1,nahIM
+1,2,3,4
+,,,
+[m sg a],[- sg -],,
+3:k1,3:k2,0:main
+,,,
+,,,
+,,,3:neg
+negative
+#haMsoM ne cidiyA ko mukkA mArA.
+haMsa_1, cidiyA_1, mukkA+mAra_1-yA_1
+1,2,3
+,,
+[- pl a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#rAjamahala mEM wAlAba hE.
+rAjamahala_1, wAlAba_2,hE_1-pres
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k7p,3:k1,0:main
+,,
+def,,
+,,
+affirmative
+#haMsa IRyAlu hE
+haMsa_1, IRyAlu_1,hE_1-pres
+1,2,3
+,,
+[- pl a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#haMsa suKI hE.
+haMsa_1,suKI_1,hE_1-pres
+1,2,3
+,,
+[- pl a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#rAjA ke pAsa paMKa hEM
+rAjA_1,paMKa_1,state_possession-pres
+1,2,3
+,,
+[- sg a],[- pl a],
+possessor,possessed,0:main
+,,
+def,,
+,,
+affirmative
+#haMsoM ne bAwacIwa kI.
+haMsa_1,bAwacIwa+kara_2-yA_1
+1,2
+,
+[- pl a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#Apa kala KeleMge.
+addressee,kala_2,Kela_1-gA_1
+1,2,3
+,,
+[- - m],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#ladakA Sahara se AyA hE.
+ladakA_1,Sahara_1,A_1-yA_hE_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k5,0:main
+,,
+def,def,
+,,
+affirmative
+#wAlAba meM haMsa hE.
+wAlAba_2,haMsa_1,hE_1-pres
+1,2,3
+,,
+[- sg a],[- pl a],
+3:k7p,3:k1,0:main
+,,
+def,,
+,,
+affirmative
+#ladake ne nayI kiwAba paDI.
+ladakA_1,nayA_2,kiwAba_1,paDa_2-yA_1
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+def,,,
+,,,
+affirmative
+#somavAra pahalA xina hE.
+somavAra_1,pahalA_1,xina_1,hE_1-pres
+1,2,3,4
+,,,
+,,[- sg a],
+4:k1,3:card,4:k1s,0:main
+,,,
+,,def,
+,,,
+affirmative
+#rAma Sahara meM WA
+rAma,Sahara_1,hE_1-past
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,def,
+,,
+affirmative
+#ayAn kA miwra vixyAlaya meM paDawA WA.
+ayAn,miwra_1,vixyAlaya_1,paDa_2-wA_WA_1
+1,2,3,4
+per,,,
+[- sg a],[m sg a],[- sg a],
+2:r6,4:k1,4:k7p,0:main
+,,,
+,,def,
+,,,
+affirmative
+#vaha rAmapura meM rahawA WA.
+vaha,rAmapura,raha_1-wA_WA_1
+1,2,3
+,place,
+[m sg a],,
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#koI Pala KawIM hEM.
+koI_5,Pala_1,KA_1-wA_hE_1
+1,2,3
+,mass,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#ayAn ne use pAnI xeyA.
+ayAn,vaha,pAnI_1,xe_1-yA_1
+1,2,3,4
+per,,mass,
+[m sg a],[m sg a],[- sg a],
+4:k1,4:k4,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEMne nayI kiwAba paDI.
+speaker,nayA_1,kiwAba_1,paDa_1-yA_1
+1,2,3,4
+,,,
+[- sg u],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEM Sahara jA rahA hUz.
+speaker,Sahara_1,jA_1-0_rahA_hE_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,def,
+,,
+affirmative
+#mEM saBA ke lie Sahara se AyA.
+speaker,saBA_3,Sahara_1,A_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#mEM Aja AyA.
+speaker,Aja_1,A_1-yA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#mEM usase kiwAba le rahA hUz.
+speaker,vaha,kiwAba_1,le_1-0_rahA_hE_1
+1,2,3,4
+,,,
+[m sg u],[m sg a],[- sg a],
+4:k1,4:k5,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEM usake lie Sahara se AyA.
+speaker,vaha,Sahara_1,A_1-yA_1
+1,2,3,4
+,,,
+[- sg u],[m sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,,def,
+,,,
+affirmative
+#ayAn ke pAsa WodZA pAnI WA.
+ayAn,WodZA_1,pAnI_1,state_possession-past
+1,2,3,4
+per,,,
+[m sg a],,[- sg a],
+possessor,3:mod,possessed,0:main
+,,,
+,,,
+,,,
+affirmative
+#mEM kala AUzgA.
+speaker,kala_2,A_1-gA_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k7t,0:main
+,,
+,,
+,,
+affirmative
+#vaha acCA dAktara hE
+vaha,acCA_1,dAktara_1,hE_1-pres
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k1s,0:main
+,,,
+,,,
+,,,
+affirmative
+#ladake ke liye jaMgala se Pala lAo!
+ladakA_1,jaMgala_1,Pala_1,lA_1-o_1
+1,2,3,4
+,,,
+[- sg a],[- sg a],[- pl a],
+4:rt,4:k5,4:k2,0:main
+,,,
+def,def,,
+,,,
+imperative
+#ladakA nayI kiwAba paDa rahA hE.
+ladakA_1,nayA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+def,,,
+,,,
+affirmative
+#mEM Gara A rahA hUz.
+speaker,Gara_1,A_1-0_rahA_hE_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,,
+,,
+affirmative
+#kyA mEM ApakI sahAyawA kara sakawA hUz?
+,speaker,addressee,sahAyawA+kara_1-0_sakawA_hE_3
+1,2,3,4
+yes_no_qsn,,,
+,[m sg u],[- - m],
+,4:k1,4:k2,0:main
+,,,
+,,,
+,,,
+interrogative
+#ayAn ne KAnA nahIM KAyA WA.
+ayAn,KAnA_1,nahIM_1,KA_1-yA_WA_2
+1,2,3,4
+per,mass,,
+[m sg a],[- sg a],
+4:k1,4:k2,,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#vaha Sahara meM vixyAlaya meM gayA.
+vaha,Sahara_1,vixyAlaya_1,jA_1-yA_1
+1,2,3,4
+,,,
+[m sg a],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2p,0:main
+,,,
+,def,,
+,,,
+affirmative
+#rAma Delhi meM rahawA hE
+rAma,Delhi,raha_1-wA_hE_1
+1,2,3
+per,place,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#baccA bagIcA meM Kela rahA hE
+baccA_2,bagIcA_1,Kela_1-0_rahA_hE_1
+1,2,3
+,,
+[ sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,def,
+,,
+affirmative
+#sIwA ne xillI meM cidayAGara xeKA
+sIwA,xillI,cidiyAGara_1,xeKa_1-yA_1
+1,2,3,4
+per,place,,
+[f sg u],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#aMSa dAktara hE
+aMSa,dAktara_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#ladakA vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
+ladakA_1,vixyAlaya_1,bagIcA_1,kiwAba_1,paDa_1-0_rahA_hE_1
+1,2,3,4,5
+,,,,
+[m sg a],[- sg a],[- sg a],[- sg a],
+5:k1,5:k7p,5:k7p,5:k2,0:main
+,,,,
+def,def,def,,
+,,,,
+affirmative
+#Sahara jAo
+Sahara_1,jA_1-o_1,
+1,2
+,
+[- sg a],
+2:k2p,0:main
+,
+def,
+,
+imperative
+#rAju ko Pala KAnA hogA
+rAju,Pala_1,KA_1-nA_hogA_1
+1,2,3
+per,,
+[- sg a],[- pl -]
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#mEM so rahA WA
+speaker,so_1-0_rahA_WA_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#aMSa ne sIwA ko kiwAba xiyA.
+aMSa,sIwA,kiwAba_1,xe_1-yA_1
+1,2,3,4
+per,per,,
+[m sg a],[f sg u],[- sg a],
+4:k1,4:k4,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#ayAn ko vixyAlaya meM paDanA cAhie.
+ayAn,vixyAlaya_1,paDa_2-nA_cAhie_2
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#ayAn paDegA.
+ayAn,paDa_2-gA_1
+1,2
+per,
+[m sg a],
+2:k1,0:main
+,
+,
+,
+affirmative
+#usane calaciwra xeKA.
+vaha,calaciwra_1,xeKa_3-yA_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#unhoMne bagZIce meM KAnA KAyA.
+vaha,bagIcA_1,KAnA_1,KA_1-yA_1
+1,2,3,4
+,,mass,
+[m pl a],[- sg a],[- sg a],
+4:k1,4:k7p,4:k2,0:main
+,,,
+,def,,
+,,,
+affirmative
+#muJe Gara jAnA cAhie
+speaker,Gara_1,jA_1-nA_cAhie_1
+1,2,3
+,,
+[- sg u],[- sg -],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#riweSa vixyAlaya meM paDawA hE.
+riweSa,vixyAlaya_1,paDa_2-wA_hE_1
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,def,
+,,
+affirmative
+#jAnavara GAsa KawA hEM.
+jAnavara_1,GAsa_1,KA_1-wA_hE_1
+1,2,3
+,mass,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#riweSa bagIce meM hE.
+riweSa,bagIcA_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+affirmative
+#usane KAnA nahIM KAyA.
+vaha,KAnA_1,nahIM_1,KA_1-yA_1
+1,2,3,4
+,mass,,
+[f sg a],[- sg a],,
+4:k1,4:k2,,0:main
+,,,
+,,,
+,,4:neg,
+negative
+#vaha KAnA KA rahA hE.
+vaha,KAnA_1,KA_1-0_rahA_hE_1
+1,2,3
+,mass,
+[m sg a],[- - a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#merA xoswa bagIce meM Kela rahA hE.
+speaker,xoswa_1,bagIcA_1,Kela_1-0_rahA_hE_1
+1,2,3,4
+,,,
+[- sg u],[- sg a],[- sg a],
+2:r6,4:k1,4:k7p,0:main
+,,,
+,,def,
+,,,
+affirmative
+#jAnavara bagIce meM Aye.
+jAnavara_1,bagIcA_1,A_1-yA_1
+1,2,3
+,,
+[- pl a],[- sg a],
+3:k1,3:k2p,0:main
+,,
+def,def,
+,,
+affirmative
+#jAnavara Pala KAwe hEM.
+jAnavara_1,Pala_1,KA_1-wA_hE_1
+1,2,3
+,,
+[- sg a],[- pl a],
+3:k1,3:k2,0:main
+,,
+,,
+,,
+affirmative
+#mEM XIre calawA hUz.
+speaker,XIre_1,cala_6-wA_hE_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:kr_vn,0:main
+,,
+,,
+,,
+affirmative
+#riweSa acCA hE.
+riweSa,acCA_1,hE_1-pres
+1,2,3
+per,,
+[m sg a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#kyA riweSa jA rahA hE?
+,riweSa,jA_1-0_rahA_hE_1
+1,2,3
+yes_no_qsn,per,
+,[- sg a],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#Apa kahAz rahawe hEM?
+addressee,kahAz_1,raha_1-wA_hE_1 
+1,2,3
+,,
+[- - m],,
+3:k1,3:k7p,0:main
+,,
+,,
+,,
+interrogative
+#riweSa vixyAlaya meM bagIce meM kiwAba paDa rahA hE.
+riweSa,vixyAlaya_1,bagIcA_1,kiwAba_1,paDa_2-0_rahA_hE_1
+1,2,3,4,5
+per,,,,
+[m sg a],[- sg a],[- sg a],[- sg a],
+5:k1,5:k7p,5:k7p,5:k2,0:main
+,,,,
+,def,def,,
+,,,,
+affirmative
+#riweSa ke liye jaMgala se Pala lAo!
+riweSa,jaMgala_1,Pala_1,lA_1-o_1
+1,2,3,4
+per,,,
+[m sg a],[- sg a],[- pl a],
+4:rt,4:k5,4:k2,0:main
+,,,
+,def,,
+,,,
+imperative
+#jAnavara kya kAwA hE?
+jAnavara_1,kyA_1,KA_1-wA_hE_1
+1,2,3
+,,
+[- pl a],,
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+interrogative
+#ayAn acCA ladZakA WA
+ayAn,acCA_1,ladZakA_1,hE_1-past
+1,2,3,4
+per,,,
+[m sg a],,[- sg a],
+4:k1,3:mod,4:k1s,0:main
+,,,
+,,,
+,,,
+affirmative
+#riweSa vixyAlaya meM paDawA WA.
+riweSa,vixyAlaya_1,paDa_2-wA_WA_1
+1,2,3
+per,def,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,def,
+,,
+affirmative
+#riweSa ke pAsa KaragoSa WA
+riweSa,KaragoSa_1,state_possession-past
+1,2,3
+per,,
+[m sg -],[m sg -],
+possessor,possessed,0:main
+,,
+,,
+,,
+affirmative
+#vaha KaragoSa ko pyAra karawA WA
+vaha,KaragoSa_1,pyAra_4-yA_1 
+1,2,3
+,,
+[m sg a],[m sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#Riwesa KaragoSa ko GAsa xewA hE.
+Riwesa,KaragoSa_1,GAsa_1,xe_1-wA_hE_1
+1,2,3,4
+per,,mass,
+[m sg a],[- sg a],[- sg a],
+4:k1,4:k4,4:k2,0:main
+,,,
+,def,,
+,,,
+affirmative
+#KaragoSa GAsa KAwA hE.
+KaragoSa_1,GAsa_1,KA_1-wA_hE_1
+1,2,3
+,mass,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative
+#vaha vixyAlaya meM  gayA
+vaha,vixyAlaya_1,jA_1-yA_1
+1,2,3
+,,,
+[m sg a],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,def,
+,,
+affirmative
+#vaha Gara meM KaragoSa ko DUzDZa rahA WA 
+vaha,Gara_2,KaragoSa_1,DUzDZa_1-0_rahA_WA_1 
+1,2,3,4
+,,,
+[m sg a],,[m sg -],
+4:k1,4:k7p,4:k2,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#KaragoSa guma gayA WA.
+KaragoSa_1,guma_2-0_gayA_WA_1
+1,2
+,
+[m sg a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#riweSa ro rahA WA.
+riweSa,ro_1-0_rahA_WA_1
+1,2
+per,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#riweSa ne KaragoSa ko xeKa
+riweSa,KaragoSa_1,xeKa_1-yA_1
+1,2,3
+per,,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#KaragoSa bagIcA meM WA
+KaragoSa_1,bagIcA_1,hE_1-past
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+def,def,
+,,
+affirmative
+#KaragoSa GAsa KA rahA WA 
+KaragoSa_1,GAsa_1,KA_1-0_rahA_WA_1
+1,2,3
+def,mass,
+[m sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,,
+,,
+affirmative
+#riweSa ko samaJa A gayA
+riweSa,samaJa_7-0_cukA_WA_1
+1,2
+per,
+[m sg -],
+2:k1,0:main
+,
+,
+,
+affirmative
+#KaragoSa BUKA WA
+KaragoSa_1,BUKA_1,hE_1-past
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#KaragoSa ne GAsa nahIM KAyA WA
+KaragoSa_1,GAsa_1,nahIM,KA_1-yA_WA_2
+1,2,3,4
+,mass,,
+[m sg a],[- sg a],,
+4:k1,4:k2,,0:main
+,,,
+def,,,
+,,4:neg,
+negative
+#merI bA muJe KAnA xewI hE 
+speaker,bA_1,speaker,KAnA_1,xe_1-wA_hE_1
+1,2,3,4,5
+,,,mass,
+[m sg u],[f sg a],[m sg u],[- sg a],
+2:r6,5:k1,5:k4,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+#KaragoSa jaMgala meM rahawA WA.
+KaragoSa_1,jaMgala_1,raha_1-wA_WA_1
+1,2,3
+,def,
+[- sg a],[- sg a],
+3:k1,3:k7p,0:main
+,,
+,def,
+,,
+affirmative
+#vaha aBimAnI WA.
+vaha,aBimAnI_3,hE_1-past
+1,2,3
+,,
+[m sg a],,
+3:k1,3:k1s,0:main
+,,
+,,
+,,
+affirmative
+#usane eka bAra ek kaCuA ko xeKA.
+vaha,eka+bAra_1,kaCuA_1,xeKa_1-yA_1
+1,2,3,4
+,,,
+[m sg a],,[- sg a],
+4:k1,4:kr_vn,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#KaragoSa ne kaCue kI KillI udZAI.
+KaragoSa_1,kaCuA_1,KillI+udZA_1-yA_1
+1,2,3
+,,
+[m sg a],[m sg a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#usane kaCue ko xOdZa ke lie cunOwI xI.
+vaha,kaCuA_1,xOdZa_1,cunOwI+xe_1-yA_1
+1,2,3,4
+,,,
+[m sg a],[m sg a],[- sg a],
+4:k1,4:k2,4:k4,0:main
+,,,
+,def,,
+,,,
+affirmative
+#kaCue ne cunOwI ko svIkAra kIyA.
+kaCuA_1,cunOwI_1,svIkAra_1-yA_1
+1,2,3
+,,
+[m sg a],[m sg a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#xOdZa SurU ho gaI.
+xOdZa_1,SurU+kara_1-0_gayA_1
+1,2
+,
+[- sg a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#KaragoSa PurwI se BAgA.
+KaragoSa_1,PurwI+se_2,BAga_8-yA_1
+1,2,3
+,,
+[m sg a],,
+3:k1,3:kr_vn,0:main
+,,
+def,,
+,,
+affirmative
+#kaCuA XIre-XIre calA.
+kaCuA_1,XIre+XIre_3,cala_6-yA_1
+1,2,3
+,,
+[m sg a],,
+3:k1,3:kr_vn,0:main
+,,
+def,,
+,,
+affirmative
+#KaragoSa Waka gayA.
+KaragoSa_1,WakA_1-0_gayA_1
+1,2
+,
+[- sg a],[stative]
+2:k1,0:main
+,
+def,
+,
+affirmative
+#KaragoSa rukA.
+KaragoSa_1,ruka_6-yA_1
+1,2
+,
+[- sg a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#usane kaCuA ke lie xUra se paryavekRaNa kiyA.
+vaha,kaCuA_1,xUra_5,paryavekRaNa+kara_1-yA_1
+1,2,3,4
+,,,
+[m sg a],[- sg a],[- sg a],
+4:k1,4:rt,4:k5,0:main
+,,,
+,def,def,
+,,,
+affirmative
+#vaha kaCuA ko nahIM xeKa sakawA WA.
+vaha,kaCuA_1,nahIM_1,xeKa_1-0_sakawA_WA_1 
+1,2,3,4
+,,,
+[m sg a],[m sg a],,
+4:k1,4:k2,,0:main
+,,,
+,def,,
+,,4:neg,
+negative
+#KaragoSa ne socA.
+KaragoSa_1,soca_6-yA_1
+1,2
+,
+[- sg a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#kaCuA XIre cala rahA hE.
+kaCuA_1,XIre_1,cala_6-0_rahA_hE_1
+1,2,3
+,,
+[m sg a],,
+3:k1,3:kr_vn,0:main
+,,
+def,,
+,,
+affirmative
+#mEM ArAma kara sakawA hUz.
+speaker,ArAma+kara_2-0_sakawA_hE_1
+1,2
+,
+[- sg u],
+2:k1,0:main
+,
+,
+,
+affirmative
+#KaragoSa so gayA.
+KaragoSa_1,so_1-0_gayA_1
+1,2
+,
+[- sg a],
+2:k1,0:main
+,
+def,
+,
+affirmative
+#kaCuA niraMwara calawA rahA.
+kaCuA_1,niraMwara_4,cala_6-#wA_WA_1
+1,2,3
+,,
+[- sg a],,
+3:k1,3:kr_vn,0:main
+,,
+def,,
+,,
+affirmative
+#KaragoSa aBI BI so rahA WA.
+KaragoSa_1,aBI+BI_1,so_1-0_rahA_WA_1
+1,2,3
+,,
+[- sg a],,
+3:k1,3:kr_vn,0:main
+,,
+def,,
+,,
+affirmative
+#kaCuA ganwavya pe pahuzca gayA.
+kaCuA_1,ganwavya_1,pahuzca_7-yA_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#kaCuA xOdZa jIwa gayA.
+kaCuA_1,xOdZa_1,jIwa_7-yA_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k2,0:main
+,,
+def,def,
+,,
+affirmative
+#KaragoSa SaramiMxA huA.
+KaragoSa_1,SaramiMxA_1,hE_1-past
+1,2,3
+,,
+[m sg a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#vaha bujurga AxamI kI sahAyawA karawA hE.
+vaha,bujurga_1,AxamI_1,sahAyawA+kara_1-wA_hE_1
+1,2,3,4
+,,,
+[m sg a],,[m sg a],
+4:k1,3:mod,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#usane basa+addA xeKA.
+vaha,basa_1+addA_1,xeKa_1-yA_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,2.2/2.1:rt 3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#vaha basa+adde para gayA.
+vaha,basa_1+addA_1,jA_1-yA_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,2.2/2.1:rt 3:k2p,0:main
+,,
+,def,
+,,
+affirmative
+#vaha bahuwa aBimAnI WA.
+vaha,bahuwa_7,aBimAnI_3,hE_1-past
+1,2,3,4
+,,,
+[m sg a],,,
+4:k1,3:intf,4:k1s,0:main
+,,,
+,,,
+,,,
+affirmative
+#usane pramANa pawra xeKA.
+vaha,pramANa_1+pawra_1,xeKa_1-yA_1
+1,2,3
+,,
+[m sg a],[- sg a],
+3:k1,2.2/2.1:rt 3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#usane rAma ke kAryAlaya kI AXAraSilA raKI.
+vaha,rAma,kAryAlaya_1,AXAraSilA_1,raKa_4-yA_1
+1,2,3,4,5
+,per,,,
+[m sg a],[- sg a],[- sg a],[- sg a],
+5:k1,3:r6,4:rt,5:k2,0:main
+,,,,
+,,,def,
+,,,,
+affirmative
+#Apa Sahara jAo!
+addressee,Sahara_1,jA_1-o_1
+1,2,3
+,,
+[- - m],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,def,
+,,
+imperative
+#hari ne pAnI se GadZe ko BarA.
+hari,pAnI_1,GadZA_2,Bara_7-yA_1
+1,2,3,4
+per,mass,,
+[f sg a],[- sg a],[- sg a],
+4:k1,4:k3,4:k2,0:main
+,,,
+,,def,
+,,,
+affirmative
+#kyA hari ne pAnI se GadZe ko BarA?
+kyA_2,hari,pAnI_1,GadZA_2,Bara_7-yA_1
+1,2,3,4,5
+yes_no_qsn,per,mass,,
+,[f sg a],[- sg a],[- sg a],
+,5:k1,5:k3,5:k2,0:main
+,,,,
+,,,def,
+,,,,
+interrogative
+#kisane pAnI se GadZe ko BarA?
+kOna_1,pAnI_1,GadZA_2,Bara_7-yA_1
+1,2,3,4
+,mass,,
+,[- sg a],[- sg a],
+4:k1,4:k3,4:k2,0:main
+,,,
+,,def,
+,,,
+interrogative
+#hari ne kyA GadZe meM BarA?
+hari,kyA_1,GadZA_2,Bara_7-yA_1
+1,2,3,4
+per,,,
+[f sg a],,[- sg a],
+4:k1,4:k2,4:k7p,0:main
+,,,
+,,def,
+,,,
+interrogative
+#wuma pAnI se GadZe ko Baro.
+addressee,pAnI_1,GadZA_2,Bara_7-o_1
+1,2,3,4
+,mass,,
+[- - m],[- sg a],[- sg a],
+4:k1,4:k3,4:k2,0:main
+,,,
+,,def,
+,,,
+imperative
+#hari ne pAnI se GadZe ko nahIM BarA.
+hari,pAnI_1,GadZA_2,nahIM_1,Bara_7-yA_1
+1,2,3,4,5
+per,mass,,,
+[f sg a],[- sg a],[- sg a],,
+5:k1,5:k3,5:k2,,0:main
+,,,,
+,,def,,
+,,,4:neg,
+negative
+#GadZe meM pAnI hari ne BarA.
+GadZA_2,pAnI_1,hari,Bara_7-yA_1
+1,2,3,4
+,mass,per,
+[- sg a],[- sg a],[f sg a],
+4:k7p,4:k2,4:k1,0:main
+,,,
+def,,,
+,,,
+affirmative
+#Sahara mawa jAo!
+Sahara_1,nahIM_1,jA_1-o_1
+1,2,3
+,,
+[- sg a],,
+3:k2p,,0:main
+,,
+def,,
+,3:neg,
+imperative
+#sUrya nakRawra hE.
+sUrya_1,nakRawra_1,hE_1-pres
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#sUrya badA nakRawra hE.
+sUrya_1,badZA_1,nakRawra_1,hE_1-pres
+1,2,3,4
+,,,
+[- sg a],,[- sg a],
+4:k1,3:mod,4:k1s,0:main
+,,,
+def,,,
+,,,
+affirmative
+#sUrya sabase badA nakRawra hE.
+sUrya_1,badZA_1,nakRawra_1,hE_1-pres
+1,2,3,4
+,,,
+[- sg a],[superl],[- sg a],
+4:k1,3:mod,4:k1s,0:main
+,,,
+def,,def,
+,,,
+affirmative
+#गुलाब जैसे फूल पानी में नहीं उगते हैं।			
+gulAba_1,PUla_1,pAnI_1,nahIM_1,uga_1-wA_hE_1
+1,2,3,4,5
+,,mass,,		
+[- pl a],[- pl a],[- - a],,
+2:upamAna,5:k1,5:k7p,,0:main
+,,,,
+,,,,
+,,,5:neg,
+negative			
+#mEMne rAma se praSna pUCA.
+speaker,rAma,praSna_1,pUCa_3-yA_1
+1,2,3,4
+,per,,
+[- sg u],,[- sg a],
+4:k1,4:k2g,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#SikRikA ne CAwroM se kakRA ko sAPa karAyA.
+SikRaka_1,CAwra_1,kakRA_1,sAPa+kara_2-yA_1
+1,2,3,4
+anim,anim,,
+[- sg a],[- pl a],[- sg a],[causative]
+4:pk1,4:jk1,4:k2,0:main
+,,,
+def,def,def,
+,,,
+affirmative
+#hama puswaka paDawe hEM.
+speaker,puswaka_1,paDa_1-wA_hE_1
+1,2,3
+,,
+[- pl u],[- pl a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+saviwA rImA ko xasa seba xegI.
+saviwA, rImA, xasa_1, seba_1, xe_1-gA_1
+1,2,3,4,5
+per,per,,,
+[- sg a],[- sg a],,[- pl a],
+5:k1,5:k4,4:ord,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+rAma yaha kAma nahIM kara sakawA.
+rAma,yaha_1,kAma_1,nahIM_1,kara_17-0_sakawA_1
+1,2,3,4,5
+per,,,,
+[m sg a],,[- sg a],,
+5:k1,3:dem,5:k2,,0:main
+,,,,
+,,,,
+,,,5:neg,
+negative
+#rAma yaha kAma kara sakawA hE.
+rAma,yaha_1,kAma_1,kara_17-0_sakawA_hE_1
+1,2,3,4
+per,,,
+[m sg a],,[- sg a],
+4:k1,3:dem,4:k2,0:main
+,,,
+,,,
+,,,
+affirmative
+#kyA usane KAyA?
+,vaha,KA_1-yA_1
+1,2,3
+yes_no_qsn,,
+,[m sg a],
+,3:k1,0:main
+,,
+,,
+,,
+interrogative
+#rAvaNa mArA gayA WA.
+rAvaNa,mAra_1-yA_gayA_WA_1
+1,2
+per,
+[- sg a],
+2:k2,0:main
+,
+,
+,
+pass-affirmative
+#kyA usane nahIM KAyA?
+,vaha,nahIM_1,KA_1-yA_1
+1,2,3,4
+yes_no_qsn,,,
+,[m sg a],,
+,4:k1,,0:main
+,,,
+,,,
+,,4:neg,
+interrogative
+#muJe kalama xiyA gayA.
+speaker,kalama_1,xe_1-yA_gayA_1
+1,2,3
+,,
+[- sg u],[- sg a],
+3:k4,3:k2,0:main
+,,
+,,
+,,
+pass-affirmative
+#sUrya camakawA BI hE.
+sUrya_1, camaka_13-wA_hE_1, BI_1
+1,2,3
+,,
+[- sg a],,
+2:k1,,0:main
+,,
+def,,2:BI
+,,
+affirmative
+#usane nahIM KAyA.
+vaha,nahIM_1,KA_1-yA_1
+1,2,3
+,,
+[m sg a],,
+3:k1,,0:main
+,,
+,,
+,3:neg,
+negative
+#viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
+vivek, rahul, BI_1, samAroha_3, AmaMwriwa+kara_1-yA_1
+1,2,3,4,5
+per,per,,,
+[m sg a],[m sg a],,[- sg a],
+5:k1,5:k2,,5:rt,0:main
+,,,,
+,,5:BI,def,
+,,,,
+affirmative
+#camadZe se jUwe banAo.
+camadZA_1,jUwA_1, banA_1-o_1
+1,2,3
+mass,,
+[- sg a],[- pl a],
+3:k5prk, 3:k2,0:main
+,,
+,,
+,,
+imperative
+#vaha kiwAba suMxara hE.
+vaha_4, kiwAba_1, suMxara_1,hE_1-pres
+1,2,3,4
+,,,
+[- sg a],[- sg a],,
+2:dem,4:k1,4:k1s,0:main
+2:deic,,,
+,,,
+,,,
+affirmative
+#yaha Gara hE.
+yaha_1,Gara_2,hE_1-pres
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k1s,0:main
+2:deic,,
+,,
+,,
+affirmative
+#mEM vahAz A rahA hUz.
+speaker,vahAz_1,A_1-0_rahA_hE_1
+1,2,3
+,,
+[- sg u],,
+3:k1,3:k2p,0:main
+,,
+,,
+,,
+affirmative
+#rAma apane piwA ke sAWa vixyAlaya gayA.
+rAma,apanA,piwA_1,vixyAlaya_1,jA_1-yA_1
+1,2,3,4,5
+per,,,,
+[m sg a],,[m sg a],[- sg a],
+5:k1,3:r6,5:ras-k1,5:k2p,0:main
+,1:coref,,,
+,,,def,
+,,,,
+affirmative
+#Apa wAroM kI gaNanA nahIM kara sakawe.
+addressee,wArA_1,nahIM_1,gaNanA+kara_1-0_sakawA_1
+1,2,3,4
+,,,
+[- - m],[- pl a],,
+4:k1,4:k2,,0:main
+,,,
+,def,,
+,,4:neg,
+negative
+#ismA puswakeM paDegI.
+ismA,puswaka_1,paDa_1-gA_1
+1,2,3
+per,,
+[f sg a],[- pl a],
+3:k1,3:k2,0:main
+,,
+,def,
+,,
+affirmative
+#vaha apane piwA ke sAWa vixyAlaya jAyegI.
+vaha, apanA, piwA_1,vixyAlaya_1,jA_1-gA_1
+1,2,3,4,5
+,,,,
+,,[m sg a],[- sg a],
+5:k1,3:r6,5:ras-k1,5:k2p,0:main
+344.1:coref,344.1:coref,,,
+,,,def,
+,,,,
+affirmative
+#pqWvI ko graha kahA jAwA hE.
+pqWvI_1,graha_1,kaha_1-yA_jAwA_hE_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k2g,3:k2,0:main
+,,
+def,,
+,,
+pass-affirmative
+#BArawa ko AryAvarwa kahA jAwA WA.
+BArawa,AryAvarwa,kaha_1-yA_jAwA_WA_1
+1,2,3
+ne,ne,
+,,
+3:k2g,3:k2,0:main
+,,
+,,
+,,
+pass-affirmative
+#bacce ko CAwra kahA jAyegA.
+baccA_1,CAwra_1,kaha_1-yA_jAyegA_1
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k2g,3:k2,0:main
+,,
+,,
+,,
+pass-affirmative
+#mEMne usase eka praSna pUCA.
+speaker, vaha, eka_6, praSna_1, pUCa_3-yA_1
+1,2,3,4,5
+,,,,
+[m sg u],[m sg a],,[ - sg a],
+5:k1,5:k2g,4:card,5:k2,0:main
+,,,,
+,,,,
+,,,,
+affirmative
+#brahmAMda badA hE.
+brahmAMda_3,badA_2,hE_1-pres
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#Apa AsamAna kA avalokana acCI waraha se kara sakawe hEM.
+addressee, AsamAna_1, acCI+waraha_4, avalokana+kara_1-0_sakawA_hE_1
+1,2,3,4
+,,,
+[- - m],[- sg a],,
+4:k1,4:k2,4:kr_vn,0:main
+,,,
+,def,,
+,,,
+affirmative
+#wAre timatimAwe hE
+wArA_1,timatimA_1-wA_hE_1
+1,2
+,,
+[- pl a],
+2:k1,0:main
+,,
+def,
+,,
+affirmative
+#AkASagaMgA badI hE.
+AkASagaMgA_1,badA_2,hE_1-pres
+1,2,3
+,,
+[- sg a],,
+3:k1,3:k1s,0:main
+,,
+def,,
+,,
+affirmative
+#BArawa meM xvIpasamUha hEM.
+BArawa,xvIpasamUha_1,hE_1-pres
+1,2,3
+place,,
+,[- pl a],
+3:k7p,3:k1,0:main
+,,
+,,
+,,
+affirmative
+#ye prawIka hE.
+yaha_1,prawIka_1,hE_1-pres
+1,2,3
+,,
+[- sg a],[- sg a],
+3:k1,3:k1s,0:main
+2:deic,,
+,,
+,,
+affirmative
+#rAma ko xillI jAnA padZA.
+rAma, xillI, jA_1-nA_padZA_1
+1,2,3
+per,place,
+[m sg a],[- sg a],
+3:k1,3:k2p,0:main
+,,
+,,
+,,
+affirmative
+rAma ne SyAma xvArA mohana se BiKArI ko xAna xilavAyA.
+rAma, SyAma, mohana,BiKArI_1,xAna_1, xe_1-yA_1
+1,2,3,4,5,6
+per,per,per,,,
+[m sg a],[m sg a], [m sg a],[m sg a],[- - a],[double_causative]
+6:pk1,6:mk1,6:jk1,6:k4,6:k2,
+,,,,,
+,,,def,def,
+,,,,,
+affirmative
+mAz ne rAma se bacce ko KAnA KilavAyA.
+mAz_1,rAma, baccA_1, KAnA_1,KA_1-yA_1
+1,2,3,4,5
+,per,,mass,
+[f sg a],[m sg a],[m sg a],[- sg a],[double_causative]
+5:pk1,5:mk1,5:jk1,5:k2,
+,,,,
+def,,def,,
+,,,,
+affirmative

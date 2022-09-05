@@ -33,13 +33,13 @@ if __name__ == "__main__":
     processed_indeclinables = process_indeclinables(indeclinables_data)
     processed_pronouns = process_pronouns(pronouns_data)
     processed_nouns = process_nouns(nouns_data)
-    # print(processed_nouns)
-    # sys.exit()
     processed_adjectives = process_adjectives(adjectives_data, processed_nouns)
     processed_verbs, processed_auxverbs = process_verbs(verbs_data, depend_data, processed_nouns, processed_pronouns)
-    processed_pronouns = process_postposition(processed_pronouns, words_info, processed_verbs)
+    # processed_pronouns = process_postposition(processed_pronouns, words_info, processed_verbs)
     processed_others = process_others(others_data)
-    processed_words = collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs)
+    processed_words = collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,
+                                            processed_verbs,processed_auxverbs,processed_indeclinables,processed_others)
+    processed_words,processed_postpositions = preprocess_postposition(processed_words, words_info,processed_verbs)
     OUTPUT_FILE = generate_morph(processed_words)
 
     #Pre-processing 2
@@ -49,15 +49,21 @@ if __name__ == "__main__":
         #Reprocess adjectives and verbs based on new noun Info
         processed_adjectives = process_adjectives(adjectives_data, processed_nouns)
         processed_verbs, processed_auxverbs = process_verbs(verbs_data, depend_data, processed_nouns, processed_pronouns)
-        processed_words = collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs)
+        processed_words = collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs,processed_indeclinables,processed_others)
         OUTPUT_FILE = generate_morph(processed_words)
     
     #Post-Processing
     outputData = read_output_data(OUTPUT_FILE)
     transformed_data = analyse_output_data(outputData, processed_words)
-    transformed_fulldata = join_indeclinables(transformed_data, processed_indeclinables, processed_others)
-    PP_fulldata = process_postposition(transformed_fulldata, words_info, processed_verbs)
+    # transformed_fulldata = join_indeclinables(transformed_data, processed_indeclinables, processed_others)
+    # PP_fulldata = process_postposition(transformed_data, words_info, processed_verbs)
+    PP_fulldata = add_postposition(transformed_data,processed_postpositions)
+    print(PP_fulldata)
     POST_PROCESS_OUTPUT = rearrange_sentence(PP_fulldata)
     hindi_output = collect_hindi_output(POST_PROCESS_OUTPUT)
     write_hindi_text(hindi_output, POST_PROCESS_OUTPUT, OUTPUT_FILE)
+    print('processed Nouns:')
+    print(processed_nouns)
+    print('processed pronouns:')
+    print(processed_pronouns)
     # write_hindi_test(hindi_output, POST_PROCESS_OUTPUT, src_sentence, OUTPUT_FILE, path)
