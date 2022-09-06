@@ -1,1 +1,3 @@
-^cora<cat:n><case:d><num:s><gen:m>$
+acCA
+acCI
+acCe

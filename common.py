@@ -27,13 +27,14 @@ def getDataByIndex(value:int, searchList:list, index = 0):
         Index should be first elememt of tuples.
         Return False when index not found.'''
     try:
+        res = False
         for dataele in searchList:
-            if dataele[index] == value:
-                return dataele
+            if int(dataele[index]) == value:
+                res = dataele
     except IndexError:
         log(f'Index out of range while searching index:{value} in {searchList}','WARNING')
         return False
-    return False
+    return res
 
 def findValue(value:int, searchList:list, index = 0):
     '''search and return data by index in an array of tuples.
@@ -285,7 +286,13 @@ def process_nouns(nouns):
         else :
             if "k2" in noun[4] and 'anim' not in noun[2]:
                 case = 'd'
-        processed_nouns.append( (noun[0], clean(noun[1]), category, case, gender, number, person, proper) )
+        if '+' in noun[1]:
+            dnouns = noun[1].split('+')
+            for k in range(len(dnouns)):
+                index = noun[0] + (k*0.1)
+                processed_nouns.append( (index,clean(dnouns[k]),category, case, gender, number, person, proper) )
+        else:
+            processed_nouns.append( (noun[0], clean(noun[1]), category, case, gender, number, person, proper) )
         log(f'{noun[1]} processed as noun with case:{case} gen:{gender} num:{number} proper:{proper}.')
     return processed_nouns
 
@@ -509,6 +516,23 @@ def process_postposition(transformed_fulldata, words_info,processed_verbs):
             data[1] = data[1] + ' ' + ppost
         PPFulldata.append(tuple(data))
     return PPFulldata
+
+def join_compounds(transformed_data):
+    '''joins compound words without spaces'''
+    resultant_data = []
+    prevword = ''
+    previndex = -1
+    for data in sorted(transformed_data):
+        if int(data[0]) == previndex and data[2] == 'n' :
+            temp = list(data)
+            temp[1] = prevword + temp[1]
+            data = tuple(temp)
+            resultant_data.pop()
+        resultant_data.append(data)
+        previndex = data[0]
+        prevword = data[1]
+
+    return resultant_data
 
 def add_postposition(transformed_fulldata, processed_postpositions):
     '''Adds postposition to words wherever applicable according to rules.'''

@@ -1,1 +1,1 @@
-^mEM<cat:p><case:o><parsarg:ne><gen:m><num:s><per:u>$ ^acCA<cat:adj><case:d><gen:m><num:s>$ ^Pala<cat:n><case:d><gen:m><num:s>$ ^KA<cat:v><gen:m><num:s><per:a><tam:yA>$
+^vaha<cat:p><case:o><parsarg:ne><gen:m><num:s><per:a>$ ^basa<cat:n><case:d><gen:f><num:s>$ ^addA<cat:n><case:d><gen:m><num:s>$ ^xeKa<cat:v><gen:m><num:s><per:a><tam:yA>$
