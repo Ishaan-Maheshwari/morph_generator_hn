@@ -1,10 +1,11 @@
-#rAvaNa mArA gayA WA.
-rAvaNa,mAra_1-yA_gayA_WA_1
-1,2
-per,
-[- sg a],
-2:k2,0:main
-,
-,
-,
-pass-affirmative
+#rAvaNa acCA nahIM hE.
+rAvaNa,acCA_1,nahIM_1,hE_1-pres
+1,2,3,4
+per anim,,,
+[m sg a],,,
+4:k1,4:k1s,4:neg,0:main
+,,,
+,,,
+,,,
+affirmative
+

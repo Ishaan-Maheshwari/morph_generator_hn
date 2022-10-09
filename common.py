@@ -4,10 +4,16 @@ import subprocess
 import constant
 from wxconv import WXC
 
+def run_test():
+    import doctest
+    doctest.testmod()
 
 def log(mssg, logtype = 'OK'):
     '''Generates log message in predefined format.'''
     print(f'[{logtype}] : {mssg}')
+    if logtype == 'ERROR' :
+        path = sys.argv[1]
+        write_hindi_test('Error', mssg,'test.csv',path)
 
 def clean(word, inplace = ''):
     '''Clean concept words by removing numbers and special characters from it.'''
@@ -53,11 +59,14 @@ def getVerbGNP(tam, depend_data, processed_nouns, processed_pronouns):
     k1exists = False
     k2exists = False
     for cases in depend_data:
-        k1exists = (depend_data.index(cases)+1) if 'k1' in cases else k1exists
-        k2exists = (depend_data.index(cases)+1) if 'k2' in cases else k2exists
+        if cases == '':
+            continue
+        k1exists = (depend_data.index(cases)+1) if 'k1' == cases[-2:] else k1exists
+        k2exists = (depend_data.index(cases)+1) if 'k2' == cases[-2:] else k2exists
     if k1exists == False:
-        log('K1 relation not present in USR. Cannot determine GNP for verb.','ERROR')
-        sys.exit()
+        #log('K1 relation not present in USR. Cannot determine GNP for verb.','ERROR')
+        return 'm','s','a'
+        #sys.exit()
 
     searchIndex = k1exists
     searchList = processed_nouns + processed_pronouns
@@ -138,7 +147,8 @@ def check_noun(word_data):
     '''Check if word is a noun by the USR info'''
     try:
         if word_data[3] != '':
-            return True
+            if word_data[3][1:-1] not in ('superl','stative','causative'):
+                return True
         return False
     except IndexError:
         log(f'Index Error for GNP Info. Checking noun for {word_data[1]}','ERROR')
@@ -147,7 +157,7 @@ def check_noun(word_data):
 def check_pronoun(word_data):
     '''Check if word is a pronoun by the USR info'''
     try:
-        if word_data[1] in ('addressee', 'speaker', 'vaha', 'kOna_1', 'kyA_1'):
+        if clean(word_data[1]) in ('addressee', 'speaker','kyA', 'Apa', 'jo', 'koI', 'kOna', 'mEM', 'saba', 'vaha', 'wU', 'wuma', 'yaha'):
             return True
         elif 'coref' in word_data[5]:
             return True
@@ -177,7 +187,11 @@ def check_verb(word_data):
     return False
 
 def check_indeclinable(word_data):
-    '''Check if word is in indeclinable word list'''
+    """ Check if word is in indeclinable word list.
+    >>> word = (1,'waWA_1',,,,,)
+    >>> check_indeclinable(word)
+    True
+    """
     indeclinable_words = (
         'waWA,Ora,paranwu,kinwu,evaM,waWApi,Bale hI,'
         'wo,agara,magara,awaH,cUMki,cUzki,jisa waraha,'
@@ -220,7 +234,10 @@ def analyse_words(words_list):
     return indeclinables,pronouns,nouns,adjectives,verbs,others
 
 def process_indeclinables(indeclinables):
-    '''Processes indeclinable words'''
+    '''Processes indeclinable words
+    >>> process_indeclinables([(1,'aBI_1',,,,,)])
+    [(2,'aBI','indec')]
+    '''
     processed_indeclinables = []
     for indec in indeclinables:
         processed_indeclinables.append( (indec[0],clean(indec[1]),'indec') )
@@ -246,13 +263,14 @@ def extract_gnp(gnp_info):
 
     return gender,number,person
 
-def process_pronouns(pronouns):
-    '''Process pronouns as (index, word, category, case, gender, number, person, parsarg)'''
+def process_pronouns(pronouns,processed_nouns):
+    '''Process pronouns as (index, word, category, case, gender, number, person, parsarg, fnum)'''
     processed_pronouns = []
     for pronoun in pronouns:
         category = 'p'
         case = 'o'
         parsarg = 0
+        fnum = None
         gender, number, person = extract_gnp(pronoun[3])
         if "k1" in pronoun[4]:
             if clean(pronoun[1]) in ('kOna','kyA') and pronoun[2] not in ('anim','per'):
@@ -269,8 +287,15 @@ def process_pronouns(pronouns):
             word = 'vaha'
         else:
             word = clean(pronoun[1])
-        processed_pronouns.append( (pronoun[0], word, category, case, gender, number, person, parsarg) )
-        log(f'{pronoun[1]} processed as pronoun with case:{case} par:{parsarg} gen:{gender} num:{number} per:{person}')
+        if "r6" in pronoun[4]:
+            ''' If dependency is r6 then add fnum and take gnp and case from following noun'''
+            fnoun = int(pronoun[4][0])
+            fnoun_data = getDataByIndex(fnoun,processed_nouns, index=0)
+            gender = fnoun_data[4]  #To-ask
+            fnum = number = fnoun_data[5]
+            case = fnoun_data[3]
+        processed_pronouns.append( (pronoun[0], word, category, case, gender, number, person, parsarg, fnum) )
+        log(f'{pronoun[1]} processed as pronoun with case:{case} par:{parsarg} gen:{gender} num:{number} per:{person} fnum:{fnum}')
     return processed_pronouns
 
 def process_nouns(nouns):
@@ -315,18 +340,28 @@ def process_adjectives(adjectives, processed_nouns):
         log(f'{adjective[1]} processed as an adjective with case:{case} gen:{gender} num:{number}')
     return processed_adjectives
 
-def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns):
+def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns, processed_others, re= False):
     '''Process verbs as (index, word, category, gender, number, person, tam)'''
     processed_verbs = []
     processed_auxverbs = []
     aux_verbs = []
     for verb in verbs:
+        if '+' in verb[1]:
+            exp_v = verb[1].split('+')
+            if not re:
+                cp_word = exp_v[0]
+                processed_others.append( (verb[0]- 0.1,clean(cp_word),'other') )
+            temp = list(verb)
+            temp[1] = exp_v[1]
+            verb = tuple(temp)
+
         category = 'v'
         v = verb[1].split('-')
         root = clean(v[0])
         w = v[1].split('_')
         tam = w[0]
         for aux in w[1:]:
+            print('yes')
             if aux.isalpha():
                 aux_verbs.append(aux)
         gender, number, person = getVerbGNP(tam, depend_data, processed_nouns, processed_pronouns)
@@ -343,7 +378,7 @@ def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns):
                 aindex = verb[0] + ((i+1)*0.1)
                 processed_auxverbs.append( (aindex,clean(aroot),category,gender,number,person,atam) )
                 log(f'{aroot} processed as auxillary verb with gen:{gender} num:{number} per:{person} tam:{atam}')
-    return processed_verbs,processed_auxverbs
+    return processed_verbs,processed_auxverbs,processed_others
 
 def collect_processed_data(processed_pronouns,processed_nouns,processed_adjectives,processed_verbs,processed_auxverbs,processed_indeclinables,processed_others):
     '''collect sort and return processed data.'''
@@ -354,7 +389,10 @@ def generate_input_for_morph_generator(input_data):
     morph_input_data = []
     for data in input_data:
         if data[2] == 'p':
-            morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><parsarg:{data[7]}><gen:{data[4]}><num:{data[5]}><per:{data[6]}>$'
+            if data[8] != None and isinstance(data[8],str):
+                morph_data = f'^{data[1]}<cat:{data[2]}><parsarg:{data[7]}><fnum:{data[8]}><case:{data[3]}><gen:{data[4]}><num:{data[5]}><per:{data[6]}>$'
+            else:
+                morph_data = f'^{data[1]}<cat:{data[2]}><case:{data[3]}><parsarg:{data[7]}><gen:{data[4]}><num:{data[5]}><per:{data[6]}>$'
         elif data[2] == 'n' and data[7] == True:
             morph_data = f'{data[1]}'
         elif data[2] == 'n' :
@@ -431,6 +469,17 @@ def join_indeclinables(transformed_data, processed_indeclinables, processed_othe
     '''Joins Indeclinable data with transformed data and sort it by index number.'''
     return sorted(transformed_data + processed_indeclinables + processed_others)
 
+def nextNounData(fromIndex,word_info):
+    index = fromIndex
+    for i in range(len(word_info)):
+        for data in word_info:
+            if index == data[0]:
+                if data[3] != '' and index != fromIndex:
+                    return data
+                if ':' in data[4] :
+                    index = int(data[4][0])
+    return False
+
 def preprocess_postposition(processed_words, words_info,processed_verbs):
     '''Calculates postposition to words wherever applicable according to rules.'''
     PPdata = {}
@@ -465,6 +514,15 @@ def preprocess_postposition(processed_words, words_info,processed_verbs):
             ppost = 'ke lie'
         elif data_case == 'r6':
             ppost = 'kI' if data[4] == 'f' else 'kA'
+            nn_data = nextNounData(data[0],words_info)
+            if nn_data != False:
+                print('Next Noun data:', nn_data)
+                if nn_data[4].split(':')[1] in ('k3','k4','k5','k7','k7p','k7t','r6','mk1','jk1','rt'):
+                    ppost = 'ke'
+                elif nn_data[3][1] != 'f' and nn_data[3][3] == 'p':
+                    ppost = 'ke'
+                else:
+                    pass
         else:
             pass
         if data[2] == 'p' :

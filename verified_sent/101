@@ -1,10 +1,10 @@
-#Apa kahAz raha sakawe ho?
-addressee,kahAz_1,raha_1-0_sakawA_hE_1
-1,2,3
-,,
-[- - m],,
-3:k1,3:k2,0:main
-,,
-,,
-,,
-interrogative
+#viveka ne rAhula ko BI samAroha meM AmaMwriwa kiyA.
+vivek, rahul, samAroha_3, AmaMwriwa+kara_1-yA_1
+1,2,3,4
+per anim,per anim,,
+[m sg a],[m sg a],,,
+4:k1,4:k2,4:rt,0:main
+,,,
+,emph,def,
+,,,
+affirmative

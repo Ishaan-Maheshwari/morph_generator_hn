@@ -1,10 +1,10 @@
-#rAma yaha kAma kara sakawA hE.
-rAma,yaha_1,kAma_1,kara_17-0_sakawA_hE_1
-1,2,3,4
-per,,,
-[m sg a],,[- sg a],
-4:k1,3:dem,4:k2,0:main
-,,,
-,,,
-,,,
+#rAma ne skUla jAkara KAnA KAyA.
+rAma,skUla_1,jA_1,KAnA_1,KA_1-yA_1
+1,2,3,4,5
+per anim,,,mass, 
+[m sg a],[- sg a],,[- sg a],
+5:k1,3:k2p,5:vmod_pk,5:k2,0:main
+,,,,
+,def,,,
+,,,,
 affirmative
