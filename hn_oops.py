@@ -1,4 +1,3 @@
-from curses.ascii import isdigit
 import re
 import sys
 from typing import List,Type
@@ -48,7 +47,6 @@ class USR:
             return False
         self.words_info = list(zip(self.rules_info[1],self.rules_info[2],self.rules_info[3],self.rules_info[4],self.rules_info[5], self.rules_info[6], self.rules_info[7], self.rules_info[8]))
         return self.words_info
-
 
 class Dependence:
     def __init__(self,depStr):
@@ -426,7 +424,7 @@ class Verb(POS):
         vsplit = self.raw_concept.split('_')
         aux = []
         for v in vsplit[1:] :
-            if isdigit(v):
+            if v.isdigit():
                 continue
             else:
                 aux.append(AuxVerb(v,self))
