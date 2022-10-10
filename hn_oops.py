@@ -1,3 +1,4 @@
+from curses.ascii import isdigit
 import re
 import sys
 from typing import List,Type
@@ -204,6 +205,12 @@ class Sentence:
                 return True
         return False
     
+    def getWordByDependency(self,depen):
+        for word in self.words:
+            if word.dependency.name == depen:
+                return word
+        return False
+    
     def nextNoun(self,index) -> Type[POS]:
         lookup = {}
         look = 0
@@ -361,6 +368,34 @@ class Adjective(POS):
     def generate_morph_input(self):
         return f"^{self.concept}<cat:{self.case}><case:{self.case}><gen:{self.gender}><num:{self.number}>$"
 
+class AuxVerb():
+    AUX_MAP_FILE = 'auxillary_mapping.txt'
+    @classmethod
+    def auxmap_hin(cls,aux_verb):
+        try:
+            with open(AuxVerb.AUX_MAP_FILE,'r') as tamfile:
+                for line in tamfile.readlines():
+                    aux_mapping = line.strip().split(',')
+                    if aux_mapping[0] == aux_verb :
+                        return aux_mapping[1], aux_mapping[2]
+            # log(f'"{aux_verb}" not found in Auxillary mapping.', 'WARNING')
+            return False
+        except FileNotFoundError:
+            # log('Auxillary Mapping File not found.', 'ERROR')
+            sys.exit()
+
+    def __init__(self,name:str,verbObj:Type[POS]):
+        self.concept = name
+        self.root = None
+        self.tam = None
+        self.mainVerb = verbObj
+        self.calculateRootTAM()
+    
+    def calculateRootTAM(self):
+        root_tam = AuxVerb.auxmap_hin(self.concept)
+        if root_tam != False :
+            self.root, self.tam = root_tam
+
 class Verb(POS):
     
     @classmethod
@@ -373,8 +408,70 @@ class Verb(POS):
     def __init__(self,word_data):
         super().__init__(word_data)
         self.category = "v"
-        #calculate tam
-        #calculate auxillary verbs
+        self.root = self.calculateRoot()
+        self.tam = self.calculateTAM()
+        self.auxillary_verbs = self.calculateAuxillary()
+    
+    def calculateRoot(self):
+        return self.raw_concept.split('-')[0]
+    
+    def calculateTAM(self):
+        tam = self.raw_concept.split('-')[1].split('_')[0]
+        if self.root == 'hE' and tam in ('pres','past'):
+            alt_tam = {'pres':'hE', 'past':'WA'}
+            tam = alt_tam[tam]
+        return tam
+     
+    def calculateAuxillary(self):
+        vsplit = self.raw_concept.split('_')
+        aux = []
+        for v in vsplit[1:] :
+            if isdigit(v):
+                continue
+            else:
+                aux.append(AuxVerb(v,self))
+        return aux
+    
+    def set_default_gender(self):
+        self.gender = 'm'
+        return 'm'
+    
+    def set_default_number(self):
+        self.number = 's'
+        return 's'
+    
+    def set_default_person(self):
+        self.person = 'a'
+        return 'a'
+    
+    def set_default_gnp(self):
+        self.set_default_gender()
+        self.set_default_number()
+        self.set_default_person
+    
+    def process_gnp(self):
+        thisSentence = self.dependency.get_sentence()
+        if thisSentence == None :
+            self.set_default_gnp()
+            return
+        if self.tam == 'yA' and self.dependency != None:
+            fword = self.dependency.get_sentence().getWordByDependency('k2')
+            if fword != False:
+                self.gender = fword.gender if fword.gender != None else self.set_default_gender()
+                self.number = fword.number if fword.number != None else self.set_default_number()
+                self.person = fword.person if fword.person != None else self.set_default_person()
+                return
+        fword = self.dependency.get_sentence().getWordByDependency('k1')
+        if fword != False:
+            self.gender = fword.gender if fword.gender != None else self.set_default_gender()
+            self.number = fword.number if fword.number != None else self.set_default_number()
+            self.person = fword.person if fword.person != None else self.set_default_person()
+            return
+        else:
+            self.set_default_gnp()
+
+    def process(self):
+        self.process_gnp()
 
     def generate_morph_input(self):
         return f"{self.concept}" #Todo
@@ -400,6 +497,9 @@ class Other(POS):
         super().__init__(word_data)
         self.category = "other"
     
+    def process(self):
+        pass
+
     def generate_morph_input(self):
         return f"{self.concept}" 
 
@@ -423,6 +523,9 @@ class Indeclinables(POS):
         super().__init__(word_data)
         self.category = "indec"
     
+    def process(self):
+        pass
+
     def generate_morph_input(self):
         return f"{self.concept}" 
 
