@@ -2,6 +2,52 @@ import re
 import sys
 from typing import List,Type
 
+class USR:
+
+    @classmethod
+    def read_usr(cls,filename):
+        '''Returns array of lines for data given in file'''
+
+        try:
+            with open(filename, 'r') as file:
+                data = file.read().splitlines()
+        except FileNotFoundError:
+            sys.exit()
+        return USR(data)
+    
+    def __init__(self,data) -> None:
+        self.rules_info = []
+        self.words_info = []
+        self.data = data
+    
+    def generate_rulesinfo(self):
+        '''Return list all 10 rules of USR as list of lists'''
+        file_data = self.data
+        if len(file_data) < 10 :
+            sys.exit()
+        
+        src_sentence = file_data[0]
+        root_words = file_data[1].strip().split(',')
+        index_data = file_data[2].strip().split(',')
+        seman_data = file_data[3].strip().split(',')
+        gnp_data = file_data[4].strip().split(',')
+        depend_data = file_data[5].strip().split(',')
+        discourse_data = file_data[6].strip().split(',')
+        spkview_data = file_data[7].strip().split(',')
+        scope_data = file_data[8].strip().split(',')
+        sentence_type = file_data[9].strip()
+
+        self.rules_info = [src_sentence, root_words, index_data, seman_data, gnp_data, depend_data, discourse_data, spkview_data, scope_data, sentence_type]
+        return self.rules_info
+    
+    def generate_wordinfo(self):
+        '''Generates an array of tuples comntaining word and its USR info.
+            USR info word wise.'''
+        if len(self.rules_info) != 10:
+            return False
+        self.words_info = list(zip(self.rules_info[1],self.rules_info[2],self.rules_info[3],self.rules_info[4],self.rules_info[5], self.rules_info[6], self.rules_info[7], self.rules_info[8]))
+        return self.words_info
+
 
 class Dependence:
     def __init__(self,depStr):
@@ -10,13 +56,55 @@ class Dependence:
         d = depStr.split(':')
         self.atIndex = d[0]
         self.name = d[1]
+        self.sentence = None
     
     def default_postposition(self):
-        #TODO: Provide implementation for calculating default pp.
-        pass
+        d_postpos = {'k1':0, 'pk1':0, 'k2':0, 'k3':'se', 'k4':'ko', 'k5':'se','k7':'meM','k7p':'meM','k7t':'ko',
+                        'jk1':'ko', 'rt':'ke liye'}
+        return d_postpos.get(self.name,0)
 
-    def get_postposition(self):
-        return '0'
+    def get_postposition(self, mypos):
+        pp = self.default_postposition()
+        if pp != 0 :
+            return pp
+        if self.name in ('k1','pk1'):
+            if self.sentence == None :
+                return 0
+            if self.sentence.hasTAM('yA'):
+                if self.sentence.hasDependency('k2') or self.sentence.hasDependency('k2p'):
+                    pp = 'ne'
+                    mypos.case = 'o'
+                    return pp
+        if self.name == 'k2' and mypos.semantic in ('anim','per'):
+            pp = 'ko'
+            return pp
+        if self.name == 'r6' :
+            if self.sentence == None :
+                return 0
+            nextnoun = self.sentence.nextNoun(mypos.index)
+            if nextnoun == None:
+                return 0
+            if nextnoun.gender == 'f':
+                pp = 'kI'
+                return pp
+            elif nextnoun.number == 'p':
+                pp = 'ke'
+                return pp
+            elif nextnoun.postposition != None or nextnoun.postposition != 0:
+                pp = 'ke'
+                return pp
+            else:
+                pp = 'kA'
+                return pp
+
+        return 0
+    
+    def set_sentence(self, sent):
+        assert isinstance(sent,Sentence), 'Object is not of type : Sentence'
+        self.sentence = sent
+    
+    def get_sentence(self):
+        return self.sentence
 
 class DiscourseElement:
     def __init__(self, disstr):
@@ -65,24 +153,28 @@ class POS:
             self.discourse = DiscourseElement(word_data[5])
         else:
             self.discourse = None
+        self.spk_view = word_data[6] if word_data[6] != '' else None
     
     def generate_morph_input(self):
         return f"{self.concept}"
-
 
 class Sentence:
 
     def __init__(self,type="affirmative"):
         self.type = type
+        self.words = []
     
-    def __init__(self,pos:Type[POS],type="affirmative"):
-        self.__init__(self,type)
-        self.words = [pos]
+    # def __init__(self,pos:Type[POS],type="affirmative"):
+    #     self.__init__(self,type)
+    #     pos.dependency.set_sentence(self)
+    #     self.words = [pos]
     
-    def __init__(self,pos_list:List,type="affirmative"):
-        self.__init__(self,type)
-        self.words = pos_list
-        self.sort()
+    # def __init__(self,pos_list:List[POS],type="affirmative"):
+    #     self.__init__(self,type)
+    #     self.words = pos_list
+    #     for word in self.words:
+    #         word.dependency.set_sentence(self)
+    #     self.sort()
     
     def getwordByIndex(self,index:int):
         for word in self.words :
@@ -94,9 +186,39 @@ class Sentence:
         #sort words according to index number
         pass
 
-    def add_words(self,new_pos:Type[POS]):
+    def add_word(self,new_pos:Type[POS]):
+        new_pos.dependency.set_sentence(self)
         self.words.append(new_pos)
         self.sort()
+    
+    def hasTAM(self,tam):
+        for word in self.words:
+            if word.category == 'v':
+                if word.TAM == 'yA' :
+                    return True
+        return False
+    
+    def hasDependency(self,depen):
+        for word in self.words:
+            if word.dependency.name == depen :
+                return True
+        return False
+    
+    def nextNoun(self,index) -> Type[POS]:
+        lookup = {}
+        look = 0
+        for word in self.words:
+            if word.index == index :
+                look = word.dependency.atIndex if word.dependency != None else 0
+            lookup[word.index] = word
+        while look != index and look != 0 :
+            next = look.get(look,0)
+            if next == 0:
+                return False
+            if next.category == 'n' :
+                return next
+            else :
+                look = next.dependency.atIndex if next.dependency != None else 0
 
 class Noun(POS):
 
@@ -113,6 +235,7 @@ class Noun(POS):
         self.category = "n"
         self.IsProper = False
         self.case = 'o'
+        self.postposition = None
         if re.search("_[0-9]",self.raw_concept) is None :
             self.IsProper = True
     
@@ -125,14 +248,19 @@ class Noun(POS):
             self.case = 'o'
 
     def process(self):
-        self.process_case(self)
-        pass
+        self.process_case()
+
+    def process_postposition(self):
+        ''' NOTE: Add words to sentence and process them before calculating postposition.'''
+
+        self.postposition = self.dependency.get_postposition(self)
+        return self.postposition
 
     def generate_morph_input(self):
         if self.IsProper:
             instr = f"{self.concept}"
         else:
-            instr = f"^{self.concept}<cat:{self.case}><case:{self.case}><gen:{self.gender}><num:{self.number}>$"
+            instr = f"^{self.concept}<cat:{self.category}><case:{self.case}><gen:{self.gender}><num:{self.number}>$"
         return instr
 
 class Pronoun(POS):
@@ -154,6 +282,50 @@ class Pronoun(POS):
         self.fnum = None
         self.case = 'o'
     
+    def process_concept(self):
+        if self.raw_concept == 'speaker' :
+            self.concept = 'mEM'
+        elif self.raw_concept == 'addressee':
+            addr_map = {'respect':'Apa', 'informal':'wU'}
+            self.concept = addr_map.get(self.spk_view, 'wuma')
+        elif self.raw_concept == 'vaha' :
+            self.concept = 'vaha'
+        else:
+            self.concept = POS.clean(self.raw_concept)
+
+    def process_case(self):
+        if self.dependency.name == 'k1':
+            if self.concept in ('kOna','kyA') and self.semantic not in ('anim','per'):
+                self.case = "d"
+        if self.dependency.name == "k2" and self.semantic in ('anim','per'):
+            self.case = "d"
+
+    def process_fnum(self):
+        if self.dependency.name == 'r6' :
+            thisSentence = self.dependency.get_sentence()
+            if thisSentence == None:
+                return
+            next_noun = thisSentence.nextNoun(self.index)
+            if next_noun == None:
+                return
+            else:
+                self.gender = next_noun.gender
+                self.number = next_noun.number
+                self.fnum = next_noun.number
+                self.case = next_noun.case
+
+
+    def process(self):
+        self.process_concept()
+        self.process_case()
+        self.process_fnum()
+    
+    def process_postposition(self):
+        ''' NOTE: Add words to sentence and process them before calculating postposition.'''
+
+        self.postposition = self.dependency.get_postposition(self)
+        return self.postposition
+    
     def generate_morph_input(self):
         if self.fnum != None :
             instr = f"^{self.concept}<cat:{self.category}><parsarg:{self.parsarg}><fnum:{self.fnum}><case:{self.case}><gen:{self.gender}><num:{self.number}><per:{self.number}>$"
@@ -173,6 +345,18 @@ class Adjective(POS):
     def __init__(self,word_data):
         super().__init__(word_data)
         self.category = "adj"
+    
+    def process(self):
+        thisSentence = self.dependency.get_sentence()
+        if thisSentence == None:
+            return
+        next_noun = thisSentence.nextNoun(self.index)
+        if next_noun == None:
+            return
+        else:
+            self.gender = next_noun.gender
+            self.number = next_noun.number
+            self.case = next_noun.case
     
     def generate_morph_input(self):
         return f"^{self.concept}<cat:{self.case}><case:{self.case}><gen:{self.gender}><num:{self.number}>$"
@@ -244,70 +428,3 @@ class Indeclinables(POS):
 
 class Compounds(POS):
     pass
-
-def read_file(file_path):
-    '''Returns array of lines for data given in file'''
-
-    try:
-        with open(file_path, 'r') as file:
-            data = file.read().splitlines()
-
-    except FileNotFoundError:
-        sys.exit()
-    return data
-
-def generate_rulesinfo(file_data):
-    '''Return list all 10 rules of USR as list of lists'''
-    if len(file_data) < 10 :
-        sys.exit()
-    
-    src_sentence = file_data[0]
-    root_words = file_data[1].strip().split(',')
-    index_data = file_data[2].strip().split(',')
-    seman_data = file_data[3].strip().split(',')
-    gnp_data = file_data[4].strip().split(',')
-    depend_data = file_data[5].strip().split(',')
-    discourse_data = file_data[6].strip().split(',')
-    spkview_data = file_data[7].strip().split(',')
-    scope_data = file_data[8].strip().split(',')
-    sentence_type = file_data[9].strip()
-
-    return [src_sentence, root_words, index_data, seman_data, gnp_data, depend_data, discourse_data, spkview_data, scope_data, sentence_type]
-
-def generate_wordinfo(root_words, index_data, seman_data, gnp_data, depend_data, discourse_data, spkview_data, scope_data):
-    '''Generates an array of tuples comntaining word and its USR info.
-        USR info word wise.'''
-    return list(zip(root_words,index_data, seman_data, gnp_data, depend_data, discourse_data, spkview_data, scope_data))
-
-
-if __name__ == "__main__":
-    
-    try:
-        path = sys.argv[1]
-    except IndexError:
-        sys.exit()
-    
-    file_data = read_file(path)
-    rules_info = generate_rulesinfo(file_data)
-    #Extracting Information
-    src_sentence = rules_info[0]
-    root_words = rules_info[1]
-    index_data = [int(x) for x in rules_info[2]]
-    seman_data = rules_info[3]
-    gnp_data = rules_info[4]
-    depend_data = rules_info[5]
-    discourse_data = rules_info[6]
-    spkview_data = rules_info[7]
-    scope_data = rules_info[8]
-    sentence_type = rules_info[9]
-    
-    words_info = generate_wordinfo(root_words, index_data, seman_data, 
-                    gnp_data, depend_data, discourse_data, spkview_data, scope_data)
-    print(words_info)
-    for word_data in words_info:
-        mypos = POS.create_pos(list(word_data))
-        print(type(mypos))
-        print(vars(mypos))
-        print(mypos.category)
-        if mypos.category == 'n' :
-            print(mypos.generate_morph_input())
