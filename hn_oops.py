@@ -335,7 +335,7 @@ class Pronoun(POS):
         if self.fnum != None :
             instr = f"^{self.concept}<cat:{self.category}><parsarg:{self.parsarg}><fnum:{self.fnum}><case:{self.case}><gen:{self.gender}><num:{self.number}><per:{self.number}>$"
         else:
-            instr = f"^{self.concept}<cat:{self.category}><case:{self.case}><parsarg:{self.dependency.get_postposition()}><gen:{self.gender}><num:{self.number}><per:{self.number}>$"
+            instr = f"^{self.concept}<cat:{self.category}><case:{self.case}><parsarg:{self.dependency.get_postposition(self)}><gen:{self.gender}><num:{self.number}><per:{self.number}>$"
         
         return instr
 
@@ -423,7 +423,7 @@ class Verb(POS):
     def calculateAuxillary(self):
         vsplit = self.raw_concept.split('_')
         aux = []
-        for v in vsplit[1:] :
+        for v in vsplit[2:] :
             if v.isdigit():
                 continue
             else:
@@ -472,7 +472,11 @@ class Verb(POS):
         self.process_gnp()
 
     def generate_morph_input(self):
-        return f"{self.concept}" #Todo
+        morph_input =  f'^{self.concept}<cat:{self.category}><gen:{self.gender}><num:{self.number}><per:{self.person}><tam:{self.tam}>$'
+        for auxverb in self.auxillary_verbs:
+            aux_morph = f'^{auxverb.root}<cat:{self.category}><gen:{self.gender}><num:{self.number}><per:{self.person}><tam:{auxverb.tam}>$'
+            morph_input = morph_input + ' ' + aux_morph
+        return morph_input
 
 class Other(POS):
 
