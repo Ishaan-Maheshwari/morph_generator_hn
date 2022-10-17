@@ -11,3 +11,6 @@ TestResults.csv
 TestResults.xlsx
 apertium_hn_old.dix
 apertium_hn.dix
+apertium_hn_in_canonical_form.dix
+verified_sent_old
+verified_sent

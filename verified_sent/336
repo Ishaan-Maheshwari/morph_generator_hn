@@ -1,10 +1,10 @@
-#usane nahIM KAyA.
-vaha,nahIM_1,KA_1-yA_1
+#rAma kyA cAhawA hE?
+rAma,kyA_1,cAha_1-wA_hE_1
 1,2,3
-,,
+per,,
 [m sg a],,
-3:k1,,0:main
+3:k1,3:k2,0:main
 ,,
 ,,
-,3:neg,
-negative
+,,
+interrogative

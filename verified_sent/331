@@ -1,10 +1,11 @@
-#kyA usane KAyA?
-,vaha,KA_1-yA_1
+#mEM usase pyAra karawA hUz.
+speaker,vaha,pyAra+kara_1-wA_hE_1
 1,2,3
-yes_no_qsn,,
-,[m sg a],
-,3:k1,0:main
+anim,ainm,
+[- sg u],,
+3:k1,3:k2,0:main
+,240.1:coref,
 ,,
 ,,
-,,
-interrogative
+affirmative
+
