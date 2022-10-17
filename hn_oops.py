@@ -47,6 +47,11 @@ class USR:
             return False
         self.words_info = list(zip(self.rules_info[1],self.rules_info[2],self.rules_info[3],self.rules_info[4],self.rules_info[5], self.rules_info[6], self.rules_info[7], self.rules_info[8]))
         return self.words_info
+    
+    def get_type(self):
+        if len(self.rules_info) > 9:
+            return self.rules_info[9]
+        #log : warning generate rules info first
 
 class Dependence:
     def __init__(self,depStr):
@@ -117,7 +122,8 @@ class POS:
 
     @classmethod
     def clean(cls,rawword):
-        return rawword
+        w = re.sub(r'[^a-zA-Z]+','', rawword)
+        return w
     
     @classmethod
     def create_pos(cls,word_data:List):
@@ -193,7 +199,7 @@ class Sentence:
     def hasTAM(self,tam):
         for word in self.words:
             if word.category == 'v':
-                if word.TAM == 'yA' :
+                if word.tam == 'yA' :
                     return True
         return False
     
@@ -224,6 +230,55 @@ class Sentence:
                 return next
             else :
                 look = next.dependency.atIndex if next.dependency != None else 0
+    
+    def process(self):
+        if len(self.words) == 0:
+            print('Cannot process sentence. Sentence is empty.')
+            return
+        for pos in self.words:
+            pos.process()
+    
+    def generate_morph(self):
+        if len(self.words) == 0:
+            print('Cannot genrate morph. Sentence is empty.')
+            return
+        morph_in = []
+        for pos in self.words:
+            morph_in.append(pos.generate_morph_input())
+        return " ".join(morph_in)
+
+    @classmethod
+    def AlphaPattern(cls,num,sym1,sym2):
+        pattern = []
+        iters = 2**num
+        fspec = 'm>'+str(num)+'b'
+        for i in range(iters):
+            alphabin = format(i,fspec)
+            alphabin = alphabin.replace('0',sym1)
+            alphabin = alphabin.replace('1',sym2)
+            pattern.append(alphabin)
+        return pattern
+
+    def generate_input(self):#Incomplete
+        if len(self.words) == 0:
+            print('Sentence is empty.')
+        amb_np = []
+        for pos in self.words:
+            if pos.category in ('n','p') and pos.gender == '-':
+                amb_np.append(pos)
+        if len(amb_np) > 0 :
+            pattern = Sentence.AlphaPattern(len(amb_np),'m','f')
+            for patt in pattern:
+                for i in range(len(amb_np)):
+                    amb_np[i].gender = patt[i]
+                self.process()
+                morph_in = self.generate_morph()
+                print(morph_in)
+
+        else:
+            self.process()
+            morph_in = self.generate_morph()
+            print(morph_in)
 
 class Noun(POS):
 
@@ -254,10 +309,10 @@ class Noun(POS):
 
     def process(self):
         self.process_case()
+        self.process_postposition()
 
     def process_postposition(self):
         ''' NOTE: Add words to sentence and process them before calculating postposition.'''
-
         self.postposition = self.dependency.get_postposition(self)
         return self.postposition
 
@@ -266,6 +321,8 @@ class Noun(POS):
             instr = f"{self.concept}"
         else:
             instr = f"^{self.concept}<cat:{self.category}><case:{self.case}><gen:{self.gender}><num:{self.number}>$"
+        if self.postposition != None and self.postposition != 0 :
+            instr = instr + ' ' + self.postposition
         return instr
 
 class Pronoun(POS):
@@ -411,7 +468,8 @@ class Verb(POS):
         self.auxillary_verbs = self.calculateAuxillary()
     
     def calculateRoot(self):
-        return self.raw_concept.split('-')[0]
+        root = self.raw_concept.split('-')[0]
+        return POS.clean(root)
     
     def calculateTAM(self):
         tam = self.raw_concept.split('-')[1].split('_')[0]
@@ -472,7 +530,7 @@ class Verb(POS):
         self.process_gnp()
 
     def generate_morph_input(self):
-        morph_input =  f'^{self.concept}<cat:{self.category}><gen:{self.gender}><num:{self.number}><per:{self.person}><tam:{self.tam}>$'
+        morph_input =  f'^{self.root}<cat:{self.category}><gen:{self.gender}><num:{self.number}><per:{self.person}><tam:{self.tam}>$'
         for auxverb in self.auxillary_verbs:
             aux_morph = f'^{auxverb.root}<cat:{self.category}><gen:{self.gender}><num:{self.number}><per:{self.person}><tam:{auxverb.tam}>$'
             morph_input = morph_input + ' ' + aux_morph
@@ -533,3 +591,15 @@ class Indeclinables(POS):
 
 class Compounds(POS):
     pass
+
+
+print("program start")
+myusr = USR.read_usr("verified_sent/1")
+myusr.generate_rulesinfo()
+myusr.generate_wordinfo()
+mysen = Sentence(myusr.get_type())
+for word_data in myusr.words_info:
+    mypos = POS.create_pos(word_data)
+    mysen.add_word(mypos)
+
+mysen.generate_input()
