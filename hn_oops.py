@@ -293,11 +293,11 @@ class Noun(POS):
     def __init__(self,word_data:Type[List]):
         super().__init__(word_data)
         self.category = "n"
-        self.IsProper = False
+        self.IsProperNoun = False
         self.case = 'o'
         self.postposition = None
         if re.search("_[0-9]",self.raw_concept) is None :
-            self.IsProper = True
+            self.IsProperNoun = True
     
     def process_case(self):
         if self.dependency.name == 'k1':
@@ -317,7 +317,7 @@ class Noun(POS):
         return self.postposition
 
     def generate_morph_input(self):
-        if self.IsProper:
+        if self.IsProperNoun:
             instr = f"{self.concept}"
         else:
             instr = f"^{self.concept}<cat:{self.category}><case:{self.case}><gen:{self.gender}><num:{self.number}>$"
