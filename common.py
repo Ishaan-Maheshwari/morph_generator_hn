@@ -4,24 +4,24 @@ import subprocess
 import constant
 from wxconv import WXC
 
-def run_test():
-    import doctest
-    doctest.testmod()
-
 def log(mssg, logtype = 'OK'):
     '''Generates log message in predefined format.'''
+
+    #Format for log message
     print(f'[{logtype}] : {mssg}')
     if logtype == 'ERROR' :
         path = sys.argv[1]
         write_hindi_test('Error', mssg,'test.csv',path)
 
 def clean(word, inplace = ''):
-    '''Clean concept words by removing numbers and special characters from it.'''
+    '''Clean concept words by removing numbers and special characters from it using regex.'''
     clword = re.sub(r'[^a-zA-Z]+', inplace, word)
     return clword
 
 def has_tam_ya():
-    '''Check if USR has verb with TAM "yA"'''
+    '''Check if USR has verb with TAM "yA". 
+        It sets the global variable HAS_TAM to true
+    '''
     global HAS_TAM
     if HAS_TAM == True:
         return True
@@ -32,6 +32,7 @@ def getDataByIndex(value:int, searchList:list, index = 0):
     '''search and return data by index in an array of tuples.
         Index should be first elememt of tuples.
         Return False when index not found.'''
+
     try:
         res = False
         for dataele in searchList:
@@ -56,6 +57,11 @@ def findValue(value:int, searchList:list, index = 0):
     return (False, None)
 
 def getVerbGNP(tam, depend_data, processed_nouns, processed_pronouns):
+    ''' Return GNP information of processed_noun/processed_pronoun which
+    has k1 in dependency row. But if verb has tam = yA , then GNP information 
+    is given of that processed_noun/processed_pronoun which has k2 in dependency row.
+    '''
+
     k1exists = False
     k2exists = False
     for cases in depend_data:
@@ -64,9 +70,7 @@ def getVerbGNP(tam, depend_data, processed_nouns, processed_pronouns):
         k1exists = (depend_data.index(cases)+1) if 'k1' == cases[-2:] else k1exists
         k2exists = (depend_data.index(cases)+1) if 'k2' == cases[-2:] else k2exists
     if k1exists == False:
-        #log('K1 relation not present in USR. Cannot determine GNP for verb.','ERROR')
         return 'm','s','a'
-        #sys.exit()
 
     searchIndex = k1exists
     searchList = processed_nouns + processed_pronouns
@@ -131,6 +135,7 @@ def extract_tamdict_hin():
 
 def auxmap_hin(aux_verb):
     '''Finds auxillary verb in auxillary mapping file. Returns its root and tam.'''
+
     try:
         with open(constant.AUX_MAP_FILE,'r') as tamfile:
             for line in tamfile.readlines():
@@ -145,6 +150,7 @@ def auxmap_hin(aux_verb):
 
 def check_noun(word_data):
     '''Check if word is a noun by the USR info'''
+
     try:
         if word_data[3] != '':
             if word_data[3][1:-1] not in ('superl','stative','causative'):
@@ -156,6 +162,7 @@ def check_noun(word_data):
 
 def check_pronoun(word_data):
     '''Check if word is a pronoun by the USR info'''
+
     try:
         if clean(word_data[1]) in ('addressee', 'speaker','kyA', 'Apa', 'jo', 'koI', 'kOna', 'mEM', 'saba', 'vaha', 'wU', 'wuma', 'yaha'):
             return True
@@ -169,6 +176,7 @@ def check_pronoun(word_data):
 
 def check_adjective(word_data):
     '''Check if word is an adjective by the USR info'''
+
     if word_data[4] != '':
         rel = word_data[4].strip().split(':')[1]
         if rel in ('card','mod','meas','ord','intf'):
@@ -177,6 +185,7 @@ def check_adjective(word_data):
 
 def check_verb(word_data):
     '''Check if word is a verb by the USR info'''
+
     if '-' in word_data[1]:
         rword = word_data[1].split('-')[0]
         if rword in extract_tamdict_hin() :
@@ -187,11 +196,8 @@ def check_verb(word_data):
     return False
 
 def check_indeclinable(word_data):
-    """ Check if word is in indeclinable word list.
-    >>> word = (1,'waWA_1',,,,,)
-    >>> check_indeclinable(word)
-    True
-    """
+    """ Check if word is in indeclinable word list."""
+
     indeclinable_words = (
         'waWA,Ora,paranwu,kinwu,evaM,waWApi,Bale hI,'
         'wo,agara,magara,awaH,cUMki,cUzki,jisa waraha,'
@@ -205,7 +211,9 @@ def check_indeclinable(word_data):
     return False
 
 def analyse_words(words_list):
-    '''Checks word for its type to process accordingly.'''
+    '''Checks word for its type to process accordingly and 
+    add that word to its corresponnding list.'''
+
     indeclinables = []
     pronouns = []
     nouns = []
@@ -234,10 +242,8 @@ def analyse_words(words_list):
     return indeclinables,pronouns,nouns,adjectives,verbs,others
 
 def process_indeclinables(indeclinables):
-    '''Processes indeclinable words
-    >>> process_indeclinables([(1,'aBI_1',,,,,)])
-    [(2,'aBI','indec')]
-    '''
+    '''Processes indeclinable words'''
+
     processed_indeclinables = []
     for indec in indeclinables:
         processed_indeclinables.append( (indec[0],clean(indec[1]),'indec') )
@@ -245,13 +251,14 @@ def process_indeclinables(indeclinables):
 
 def process_others(other_words):
     '''Process other words'''
+
     processed_others = []
     for word in other_words:
         processed_others.append( (word[0], clean(word[1]), 'other') )
     return processed_others
 
 def extract_gnp(gnp_info):
-    '''Extract GNP info in (gender,number,person) format.'''
+    '''Extract GNP info from string format to tuple (gender,number,person) format.'''
     gnp_data = gnp_info.strip('][').split(' ')
     if len(gnp_data) != 3:
         return 'm','s','a'
@@ -287,8 +294,9 @@ def process_pronouns(pronouns,processed_nouns):
             word = 'vaha'
         else:
             word = clean(pronoun[1])
+        
+        #If dependency is r6 then add fnum and take gnp and case from following noun.
         if "r6" in pronoun[4]:
-            ''' If dependency is r6 then add fnum and take gnp and case from following noun'''
             fnoun = int(pronoun[4][0])
             fnoun_data = getDataByIndex(fnoun,processed_nouns, index=0)
             gender = fnoun_data[4]  #To-ask
@@ -311,6 +319,8 @@ def process_nouns(nouns):
         else :
             if "k2" in noun[4] and 'anim' not in noun[2]:
                 case = 'd'
+        
+        #For compound words
         if '+' in noun[1]:
             dnouns = noun[1].split('+')
             for k in range(len(dnouns)):
@@ -348,7 +358,7 @@ def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns, proce
     for verb in verbs:
         if '+' in verb[1]:
             exp_v = verb[1].split('+')
-            if not re:
+            if not re: #If it is not in reprocessing stage
                 cp_word = exp_v[0]
                 processed_others.append( (verb[0]- 0.1,clean(cp_word),'other') )
             temp = list(verb)
@@ -360,16 +370,19 @@ def process_verbs(verbs, depend_data, processed_nouns, processed_pronouns, proce
         root = clean(v[0])
         w = v[1].split('_')
         tam = w[0]
+
         for aux in w[1:]:
-            print('yes')
             if aux.isalpha():
                 aux_verbs.append(aux)
+        
         gender, number, person = getVerbGNP(tam, depend_data, processed_nouns, processed_pronouns)
         if root == 'hE' and tam in ('pres','past'):
             alt_tam = {'pres':'hE', 'past':'WA'}
             tam = alt_tam[tam]
         processed_verbs.append( (verb[0],root,category,gender,number,person,tam) )
         log(f'{root} processed as verb with gen:{gender} num:{number} per:{person} tam:{tam}')
+
+        #Processing Auxillary verbs
         for i in range(len(aux_verbs)):
             aux_info = auxmap_hin(aux_verbs[i])
             if aux_info != False:
