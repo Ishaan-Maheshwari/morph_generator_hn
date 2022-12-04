@@ -437,7 +437,6 @@ def run_morph_generator(input_file):
     subprocess.run(f"sh ./run_morph-generator.sh {input_file}",stdout = f, shell=True)
     return "morph_input.txt-out.txt"
 
-
 def generate_morph(processed_words):
     '''Run Morph generator'''
     morph_input = generate_input_for_morph_generator(processed_words)
@@ -622,7 +621,6 @@ def add_postposition(transformed_fulldata, processed_postpositions):
         PPFulldata.append(data)
     
     return PPFulldata
-
 
 def rearrange_sentence(fulldata):
     '''Function comments'''
